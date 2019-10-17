@@ -1,7 +1,8 @@
 ---
 title: 'Collection: LeetCode 447. Number of Boomerangs'
 date: 2019-10-14 20:16:20
-tags: 算法
+categories: 算法
+tags: collection
 ---
 
 - collection

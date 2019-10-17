@@ -1,7 +1,8 @@
 ---
 title: 'Collection: LeetCode 219. Contain Duplicate II'
 date: 2019-10-16 20:03:20
-tags: 算法
+categories: 算法
+tags: collection
 ---
 
 - collection

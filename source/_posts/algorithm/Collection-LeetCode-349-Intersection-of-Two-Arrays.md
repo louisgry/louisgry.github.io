@@ -1,7 +1,8 @@
 ---
 title: 'Collection: LeetCode 349. Intersection of Two Arrays'
 date: 2019-10-07 20:27:37
-tags: 算法
+categories: 算法
+tags: collection
 ---
 
 - collection

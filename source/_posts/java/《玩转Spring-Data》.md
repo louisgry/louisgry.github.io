@@ -1,7 +1,8 @@
 ---
 title: 《玩转Spring Data》
 date: 2019-08-14 15:41:34
-tags: Java
+categories: Java
+tags: Spring
 ---
 
 https://github.com/louisgry/Programming/tree/master/springdata

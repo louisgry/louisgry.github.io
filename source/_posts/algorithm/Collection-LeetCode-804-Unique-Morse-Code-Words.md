@@ -1,7 +1,8 @@
 ---
 title: 'Collection: LeetCode 804. Unique Morse Code Words'
 date: 2019-10-15 20:15:36
-tags: 算法
+categories: 算法
+tags: collection
 ---
 
 - 804题解

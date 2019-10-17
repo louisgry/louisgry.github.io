@@ -1,7 +1,8 @@
 ---
 title: 《Java入门第一季》
 date: 2019-05-30 15:32:45
-tags: Java
+categories: Java
+tags: Java基础
 ---
 
 - [Java初体验](#Java初体验)

@@ -1,7 +1,8 @@
 ---
 title: 'Collection: LeetCode 242. Valid Anagram'
 date: 2019-10-09 20:25:21
-tags: 算法
+categories: 算法
+tags: collection
 ---
 
 - collection

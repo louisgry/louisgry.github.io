@@ -1,7 +1,8 @@
 ---
 title: 'Collection: LeetCode 290. Word Pattern'
 date: 2019-10-11 20:18:41
-tags: 算法
+categories: 算法
+tags: collection
 ---
 
 - collection

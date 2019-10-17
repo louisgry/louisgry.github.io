@@ -1,7 +1,8 @@
 ---
 title: 'Collection: LeetCode 220. Contain Duplicate III'
 date: 2019-10-17 19:53:49
-tags: 算法
+categories: 算法
+tags: collection
 ---
 - collection
     - 220 Contain Duplicate III：https://leetcode.com/problems/contains-duplicate-iii/

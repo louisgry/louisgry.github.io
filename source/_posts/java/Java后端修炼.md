@@ -1,7 +1,8 @@
 ---
 title: Java后端修炼
 date: 2019-05-23 00:00:00
-tags: Java
+categories: Java
+tags: 路径
 ---
 
 ### 我的核心知识
