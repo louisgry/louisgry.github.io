@@ -5,7 +5,7 @@ tags: Java
 ---
 
 https://github.com/louisgry/Programming/tree/master/springdata
-
+<!-- more -->
 - Ch1：课程介绍
     - Spring Data：简化数据库的访问方式
     - 包含多个子项目：Spring Data JPA、MongoDB、Redis、Solr
@@ -51,16 +51,16 @@ https://github.com/louisgry/Programming/tree/master/springdata
         - 命名规则：findByNameInOrAgeLessThan
     - Query注解
         - 方式一：
-        ```
+        ```java
         @Query("select o from Employee o where o.name=?1 and o.age=?2")
         ```
         - 方式二：
-        ```
+        ```java
         @Query("select o from Employee o where o.name=:name and o.age=:age")
         public List<Employee> queryParams2(@Param("name")String name, @Param("age")Integer age);
         ```
         - 方式三：
-        ```
+        ```java
         @Query(nativeQuery = true, value = "select count(1) from employee")
         ```
     - 更新操作整合事务使用

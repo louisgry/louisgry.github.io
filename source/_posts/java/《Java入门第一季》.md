@@ -6,7 +6,7 @@ tags: Java
 
 - [Java初体验](#Java初体验)
 - [Java基础](#Java基础)
-
+<!-- more -->
 ### Java初体验
 - 简介
     - 诞生：1995（Sun）
@@ -28,7 +28,7 @@ tags: Java
         - CLASSPATH：类库文件位置 `.; ...\lib`（.表示当前路径）
     - 第三步：验证（CMD:` java -version`）
 - Hello world（记事本写 `javac HelloWorld.java` -> `java HelloWorld`）
-    ```
+    ```java
     public class HelloWorld{
         public static void main(String[] args){ // Small(main), Capital(String)
             System.out.println("Hello World!"); // "" not ''
@@ -47,7 +47,7 @@ tags: Java
     - 数据类型：
         - 基本数据类型（数值型、字符型、布尔型）
         - 引用数据类型（类、接口、数组）
-    ```
+    ```java
     float x = 0.5f; // 要加f
     char a = '男'; // 单引号
     boolean b = true; // 关键字boolean，true开头小写
@@ -61,7 +61,7 @@ tags: Java
     - 多个条件：`switch(today){case '一': ... default: ....}`
 - 流程控制语句
     - 计算整数的位数
-    ```
+    ```java
     public class HelloWorld{
         public static void main(String[] args){
             int num = 999;
@@ -78,19 +78,19 @@ tags: Java
     - 整数数组：`int[] scores = {1,2,3,4,5};`
     - 声明数组并分配空间：`String[] abc = new String[5];`
     - Arrays类
-    ```
+    ```java
     import java.util.Arrays;
     Arrays.sort(nums);
     Arrays.toString(nums);
     ```
     - foreach操作数组
-    ```
+    ```java
     for(int score : scores){
         System.out.println(score);
     }
     ```
     - 二维数组
-    ```
+    ```java
     int[][] nums = {{1,2},{3,4}};
     for(int i=0; i<nums.length; i++)
         for(int j=0; j<nums[i].length; j++){
