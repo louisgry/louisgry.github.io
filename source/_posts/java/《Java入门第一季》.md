@@ -3,12 +3,11 @@ title: 《Java入门第一季》
 date: 2019-05-30 15:32:45
 categories: Java
 tags: Java基础
+description: Java初体验、Java基础
 ---
 
-- [Java初体验](#Java初体验)
-- [Java基础](#Java基础)
-<!-- more -->
 ### Java初体验
+<!-- more -->
 - 简介
     - 诞生：1995（Sun）
     - 收购：2009（Oracle）

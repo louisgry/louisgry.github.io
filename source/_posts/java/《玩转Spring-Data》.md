@@ -3,6 +3,7 @@ title: 《玩转Spring Data》
 date: 2019-08-14 15:41:34
 categories: Java
 tags: Spring
+description: 使用传统方式访问数据库、Spring Data JPA
 ---
 
 https://github.com/louisgry/Programming/tree/master/springdata

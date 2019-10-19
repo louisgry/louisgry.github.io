@@ -3,6 +3,7 @@ title: "《剑指Java》Ch2-计算机网络"
 date: 2019-10-13 15:44:45
 categories: 计算机网络
 tags: 计网
+description: TCP三次握手、四次挥手、UDP、TCP滑窗、HTTP、Socket
 ---
 - 2-1：网络基础知识讲解
 <!-- more -->
