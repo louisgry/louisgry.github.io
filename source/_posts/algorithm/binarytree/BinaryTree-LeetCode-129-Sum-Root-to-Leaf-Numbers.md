@@ -2,7 +2,9 @@
 title: 'BinaryTree: LeetCode 129. Sum Root to Leaf Numbers'
 date: 2019-10-04 00:19:32
 categories: 算法
-tags: binarytree
+tags: 
+- binarytree
+- recursion
 ---
 - binarytree
     - 129 Sum Root to Leaf Numbers：https://leetcode.com/problems/sum-root-to-leaf-numbers/

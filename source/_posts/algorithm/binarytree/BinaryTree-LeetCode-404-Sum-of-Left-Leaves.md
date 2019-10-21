@@ -2,7 +2,9 @@
 title: 'BinaryTree: LeetCode 404. Sum of Left Leaves'
 date: 2019-10-01 00:19:32
 categories: 算法
-tags: binarytree
+tags: 
+- binarytree
+- recursion
 ---
 
 - binarytree

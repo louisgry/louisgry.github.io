@@ -2,7 +2,9 @@
 title: 'BinaryTree: LeetCode 226. Invert Binary Tree'
 date: 2019-09-25 00:19:32
 categories: 算法
-tags: binarytree
+tags: 
+- binarytree
+- recursion
 ---
 - binarytree
     - 226 Invert Binary Tree：https://leetcode.com/problems/invert-binary-tree/

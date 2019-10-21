@@ -2,7 +2,9 @@
 title: 'BinaryTree: LeetCode 111. Minimum Depth of Binary Tree'
 date: 2019-09-24 00:20:02
 categories: 算法
-tags: binarytree
+tags: 
+- binarytree
+- recursion
 ---
 
 - binarytree

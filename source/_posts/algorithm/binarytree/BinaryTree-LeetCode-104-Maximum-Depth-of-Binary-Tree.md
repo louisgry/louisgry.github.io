@@ -2,7 +2,9 @@
 title: 'BinaryTree: LeetCode 104. Maximum Depth of Binary Tree'
 date: 2019-09-23 00:19:32
 categories: 算法
-tags: binarytree
+tags: 
+- binarytree
+- recursion
 ---
 - binarytree
     - 104 Maximum Depth of Binary Tree：https://leetcode.com/problems/maximum-depth-of-binary-tree/

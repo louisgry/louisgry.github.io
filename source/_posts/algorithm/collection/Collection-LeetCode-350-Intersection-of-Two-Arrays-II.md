@@ -2,7 +2,9 @@
 title: 'Collection: LeetCode 350. Intersection of Two Arrays II'
 date: 2019-10-08 20:26:27
 categories: 算法
-tags: collection
+tags:  
+- collection
+- map
 ---
 
 - collection

@@ -2,7 +2,9 @@
 title: 'BinaryTree: LeetCode 222. Count Complete Tree Nodes'
 date: 2019-09-28 00:19:32
 categories: 算法
-tags: binarytree
+tags: 
+- binarytree
+- recursion
 ---
 
 - binarytree

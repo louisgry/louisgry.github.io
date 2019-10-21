@@ -2,7 +2,9 @@
 title: 'BinaryTree: LeetCode 112. Path Sum'
 date: 2019-09-30 00:19:32
 categories: 算法
-tags: binarytree
+tags: 
+- binarytree
+- recursion
 ---
 - binarytree
     - 112 Path Sum：https://leetcode.com/problems/path-sum/

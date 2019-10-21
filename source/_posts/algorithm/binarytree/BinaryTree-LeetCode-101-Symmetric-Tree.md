@@ -2,7 +2,9 @@
 title: 'BinaryTree: LeetCode 101. Symmetric Tree'
 date: 2019-09-27 00:19:32
 categories: 算法
-tags: binarytree
+tags: 
+- binarytree
+- recursion
 ---
 
 - binarytree

@@ -2,7 +2,9 @@
 title: 'BinaryTree: LeetCode 257. Binary Tree Paths'
 date: 2019-10-02 00:19:32
 categories: 算法
-tags: binarytree
+tags: 
+- binarytree
+- recursion
 ---
 
 - binarytree

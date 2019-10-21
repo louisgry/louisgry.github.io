@@ -2,7 +2,9 @@
 title: 'BinaryTree: LeetCode 110. Balanced Binary Tree'
 date: 2019-09-29 00:19:32
 categories: 算法
-tags: binarytree
+tags: 
+- binarytree
+- recursion
 ---
 - binarytree
     - 110 Balanced Binary Tree：https://leetcode.com/problems/balanced-binary-tree/

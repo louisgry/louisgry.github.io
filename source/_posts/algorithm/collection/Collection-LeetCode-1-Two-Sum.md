@@ -2,7 +2,9 @@
 title: 'Collection: LeetCode 1. Two Sum'
 date: 2019-10-12 20:18:05
 categories: 算法
-tags: collection
+tags: 
+- collection
+- map
 ---
 
 - collection

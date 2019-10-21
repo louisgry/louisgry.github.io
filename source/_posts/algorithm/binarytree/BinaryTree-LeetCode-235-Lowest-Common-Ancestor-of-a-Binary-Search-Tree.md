@@ -2,7 +2,9 @@
 title: 'BinaryTree: LeetCode 235. Lowest Common Ancestor of a Binary Search Tree'
 date: 2019-10-06 00:19:32
 categories: 算法
-tags: binarytree
+tags: 
+- binarytree
+- recursion
 ---
 
 - binarytree
