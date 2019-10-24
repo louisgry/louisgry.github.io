@@ -2,7 +2,9 @@
 title: 'Window: LeetCode 567. Permutation in String'
 date: 2019-09-20 20:06:03
 categories: 算法
-tags: window
+tags: 
+- window
+- string
 ---
 - window
     - 567 Permutation in String：https://leetcode.com/problems/permutation-in-string/

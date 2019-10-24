@@ -2,7 +2,9 @@
 title: 'DP: LeetCode 416. Partition Equal Subset Sum'
 date: 2019-09-11 23:31:13
 categories: 算法
-tags: dp
+tags:  
+- dp
+- memorySearch
 ---
 - dp
     - 416 Partition Equal Subset Sum：https://leetcode.com/problems/partition-equal-subset-sum/

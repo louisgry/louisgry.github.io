@@ -2,7 +2,9 @@
 title: 'Window: LeetCode 424. Longest Repeating Character Replacement'
 date: 2019-09-21 23:31:13
 categories: 算法
-tags: window
+tags: 
+- window
+- string
 ---
 - window
     - 424 Longest Repeating Character Replacement：https://leetcode.com/problems/longest-repeating-character-replacement/

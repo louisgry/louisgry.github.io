@@ -2,7 +2,9 @@
 title: 'DP: LeetCode 300. Longest Increasing Subsequence'
 date: 2019-09-12 23:31:13
 categories: 算法
-tags: dp
+tags:  
+- dp
+- memorySearch
 ---
 - dp
     - 300 Longest Increasing Subsequence：https://leetcode.com/problems/longest-increasing-subsequence/

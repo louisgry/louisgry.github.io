@@ -2,7 +2,9 @@
 title: 'DP: LeetCode 279. Perfect Squares'
 date: 2019-09-09 23:31:13
 categories: 算法
-tags: dp
+tags: 
+- dp
+- memorySearch
 ---
 - dp
     - 279 Perfect Squares：https://leetcode.com/problems/perfect-squares/

@@ -2,7 +2,9 @@
 title: 'DP: LeetCode 198. House Robber'
 date: 2019-09-08 23:31:13
 categories: 算法
-tags: dp
+tags: 
+- dp
+- memorySearch
 ---
 - dp
     - 198 House Robber：https://leetcode.com/problems/house-robber/ 

@@ -2,7 +2,9 @@
 title: 'DP: LeetCode 70. Climbing Stairs'
 date: 2019-09-06 23:31:13
 categories: 算法
-tags: dp
+tags:  
+- dp
+- memorySearch
 ---
 - dp
     - 70 Climbing Stairs：https://leetcode.com/problems/climbing-stairs/

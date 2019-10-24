@@ -2,7 +2,8 @@
 title: 'Partition: LeetCode 75. Sort Colors'
 date: 2019-09-03 23:31:13
 categories: 算法
-tags: partition
+tags: 
+- partition
 ---
 - partition
     - 75 Sort Color：https://leetcode.com/problems/sort-colors/

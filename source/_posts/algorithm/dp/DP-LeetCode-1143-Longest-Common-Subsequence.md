@@ -2,7 +2,10 @@
 title: 'DP: LeetCode 1143. Longest Common Subsequence'
 date: 2019-09-13 23:31:13
 categories: 算法
-tags: dp
+tags: 
+- dp
+- memorySearch
+- string
 ---
 - dp
     - 1143 Longest Common Subsequence：https://leetcode.com/problems/longest-common-subsequence/

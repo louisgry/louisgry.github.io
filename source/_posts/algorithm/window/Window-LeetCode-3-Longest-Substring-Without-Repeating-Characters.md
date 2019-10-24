@@ -2,7 +2,9 @@
 title: 'Window: LeetCode 3. Longest Substring Without Repeating Characters'
 date: 2019-09-17 23:31:13
 categories: 算法
-tags: window
+tags: 
+- window
+- string
 ---
 - window
     - 3 Longest Substring Without Repeating Characters：https://leetcode.com/problems/longest-substring-without-repeating-characters/

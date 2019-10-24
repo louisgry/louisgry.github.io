@@ -2,7 +2,9 @@
 title: 'Pointers: LeetCode 125. Valid Palindrome'
 date: 2019-09-14 23:31:13
 categories: 算法
-tags: pointers
+tags: 
+- pointers
+- string
 ---
 - pointers
     - 125 Valid Palindrome：https://leetcode.com/problems/valid-palindrome/

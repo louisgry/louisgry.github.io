@@ -2,7 +2,8 @@
 title: 'Cursor: LeetCode 283. Move Zeroes'
 date: 2019-09-01 23:31:13
 categories: 算法
-tags: cursor
+tags: 
+- cursor
 ---
 - cursor
     - 283 Move Zeroes：https://leetcode.com/problems/move-zeroes/

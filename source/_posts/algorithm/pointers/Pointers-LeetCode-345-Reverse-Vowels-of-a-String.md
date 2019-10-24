@@ -2,7 +2,9 @@
 title: 'Pointers: LeetCode 345. Reverse Vowels of a String'
 date: 2019-09-16 23:31:13
 categories: 算法
-tags: pointers
+tags: 
+- pointers
+- string
 ---
 - pointers
     - 345 Reverse Vowels of a String：https://leetcode.com/problems/reverse-vowels-of-a-string/

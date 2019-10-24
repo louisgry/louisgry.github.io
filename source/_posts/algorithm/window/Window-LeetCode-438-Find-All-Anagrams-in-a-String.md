@@ -2,7 +2,9 @@
 title: 'Window: LeetCode 438. Find All Anagrams in a String'
 date: 2019-09-18 23:31:13
 categories: 算法
-tags: window
+tags: 
+- window
+- string
 ---
 - window
     - 438 Find All Anagrams in a String：https://leetcode.com/problems/find-all-anagrams-in-a-string/

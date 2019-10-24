@@ -2,7 +2,9 @@
 title: 'DP: LeetCode 343. Integer Break'
 date: 2019-09-07 23:31:13
 categories: 算法
-tags: dp
+tags:  
+- dp
+- memorySearch
 ---
 - dp
     - 343 Integer Break：https://leetcode.com/problems/integer-break/ 

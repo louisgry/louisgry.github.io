@@ -2,7 +2,8 @@
 title: 'Cursor: LeetCode 27. Remove Element'
 date: 2019-09-02 23:31:13
 categories: 算法
-tags: cursor
+tags: 
+- cursor
 ---
 - cursor
     - 27 Remove Element：https://leetcode.com/problems/remove-element/ 

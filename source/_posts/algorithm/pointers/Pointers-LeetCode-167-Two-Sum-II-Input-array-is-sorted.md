@@ -2,7 +2,8 @@
 title: 'Pointers: LeetCode 167. Two Sum II - Input array is sorted'
 date: 2019-09-04 23:31:13
 categories: 算法
-tags: pointers
+tags: 
+- pointers
 ---
 - pointers
     - 167 Two Sum II：https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/ 

@@ -2,7 +2,8 @@
 title: 'Window: LeetCode 209. Minimum Size Subarray Sum'
 date: 2019-09-05 23:31:13
 categories: 算法
-tags: window
+tags: 
+- window
 ---
 - window
     - 209 Minimum Size Subarray Sum：https://leetcode.com/problems/minimum-size-subarray-sum/ (Medium)
