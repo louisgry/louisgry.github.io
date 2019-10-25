@@ -92,3 +92,10 @@ deploy:
   type: git
   repo: git@github.com:louisgry/louisgry.github.io.git
   branch: master
+
+# Search
+search:
+  path: ./public/search.xml
+  field: post
+  format: html
+  limit: 10000

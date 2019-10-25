@@ -5,8 +5,9 @@ categories: 算法
 tags: 
 - dp
 - memorySearch
+- queue
 ---
-- dp
+- dp、queue
     - 279 Perfect Squares：https://leetcode.com/problems/perfect-squares/
         - 给定一个正整数n，求其由最少个完全平方数组成的和等于n的个数
         - Input: n = 13
@@ -49,3 +50,5 @@ tags:
         return memo[n];
     }
     ```
+    - 思路3：queue
+    
