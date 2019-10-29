@@ -1,6 +1,6 @@
 ---
 title: 'Greedy: LeetCode 435. Non-overlapping Intervals'
-date: 2019-10-27 19:11:55
+date: 2019-10-28 11:11:55
 categories: 算法
 tags: 
 - greedy
@@ -20,6 +20,7 @@ tags:
         if(intervals.length == 0) {
             return 0;
         }
+        // 结尾早的靠前
         Arrays.sort(intervals, new Comparator<int[]>() {
             @Override
             public int compare(int[] o1, int[] o2) {
@@ -29,15 +30,15 @@ tags:
                 return o1[0] - o2[0];
             }
         });
-        int res = 1;
+        int count = 1;
         int pre = 0;
         for(int i=1; i<intervals.length; i++) {
             if(intervals[i][0] >= intervals[pre][1]) {
-                res++;
+                count++;
                 pre = i;
             }
         }
-        return intervals.length - res;
+        return intervals.length - count;
     }
     ```
     - 思路2：动态规划
@@ -63,16 +64,19 @@ tags:
         int[] memo = new int[intervals.length];
         Arrays.fill(memo, 1);
 
-        for (int i = 1; i < intervals.length; i++)
-            for (int j = 0; j < i; j++)
-                if (intervals[i][0] >= intervals[j][1])
+        for (int i = 1; i < intervals.length; i++) {
+            for (int j = 0; j < i; j++) {
+                if (intervals[i][0] >= intervals[j][1]) {
                     memo[i] = Math.max(memo[i], 1 + memo[j]);
-
-        int res = 0;
-        for(int i = 0; i < memo.length; i++) {
-            res = Math.max(res, memo[i]);
+                }
+            }
         }
 
-        return intervals.length - res;
+        int count = 0;
+        for(int i = 0; i < memo.length; i++) {
+            count = Math.max(count, memo[i]);
+        }
+
+        return intervals.length - count;
     }
     ```

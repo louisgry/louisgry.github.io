@@ -11,7 +11,7 @@ tags:
         - Input: "23"
         - Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
         <!-- more -->
-    - 思路：递归
+    - 思路：回溯法，formulate树形问题
     - 时间复杂度：O(2^n)
     - 空间复杂度：O(n)
     ```java
