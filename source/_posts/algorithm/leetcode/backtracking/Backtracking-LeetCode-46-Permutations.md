@@ -23,8 +23,7 @@ tags:
             return res;
         }
         used = new boolean[nums.length];
-        LinkedList<Integer> p = new LinkedList<Integer>();
-        generatePerm(nums, 0, p);
+        generatePerm(nums, 0, new LinkedList<Integer>());
         return res;
     }
     private void generatePerm(int[] nums, int index, LinkedList<Integer> p) {

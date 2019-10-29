@@ -5,7 +5,7 @@ categories: 数据结构
 tags: 
 - 数构
 - Set&Map
-description: Set and Map：基于链表、基于二叉树
+description: Set和Map（基于链表、基于二叉树）
 ---
 
 # Ch7-集合和映射
