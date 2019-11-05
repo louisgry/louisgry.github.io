@@ -1,9 +1,8 @@
 ---
 title: 'Review: 操作系统-编程必备'
 date: 2019-11-02 13:35:35
-categories: Review
 tags: 
-- 复习
+- Review
 description: 五大功能
 ---
 <!-- more -->

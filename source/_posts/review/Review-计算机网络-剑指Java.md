@@ -1,9 +1,8 @@
 ---
 title: 'Review: 计算机网络-剑指Java'
 date: 2019-11-04 11:56:35
-categories: Review
 tags: 
-- 复习
+- Review
 description: TCP三次握手、四次挥手、TCP、HTTP、Socket
 ---
 <!-- more -->
