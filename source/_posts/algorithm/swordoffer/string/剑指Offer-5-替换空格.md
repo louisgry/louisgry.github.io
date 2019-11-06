@@ -1,7 +1,7 @@
 ---
 title: '剑指Offer: 5. 替换空格'
 date: 2019-10-26 10:22:56
-categories: 算法
+categories: Algorithm
 tags: 
 - 剑指Offer
 - string

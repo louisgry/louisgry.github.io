@@ -1,7 +1,7 @@
 ---
 title: '剑指Offer: 7. 重建二叉树'
 date: 2019-10-27 14:22:56
-categories: 算法
+categories: Algorithm
 tags: 
 - 剑指Offer
 - binarytree

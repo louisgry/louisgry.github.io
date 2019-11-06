@@ -1,0 +1,52 @@
+---
+title: 'Backtracking: LeetCode 200. Number of Islands'
+date: 2019-10-31 17:19:45
+categories: Algorithm
+tags: 
+- backtracking
+---
+- backtracking
+    - 200 Number of Islands：https://leetcode.com/problems/number-of-islands/
+        - 二维数组中查找岛屿的个数，值为1
+        - Input: [[11110][11010][11000][00000]]
+        - Output: 1
+        <!-- more -->
+    - 思路：回溯法，递归树搜索上下左右四个方向
+    - 时间复杂度：O(n*m)
+    - 空间复杂度：O(n*m)
+    ```java
+    private boolean[][] visited;
+    private int[][] d = {{0,1},{1,0},{0,-1},{-1,0}};
+    private int m, n;
+    public int numIslands(char[][] grid) {
+        if(grid.length==0 || grid[0].length==0) {
+            return 0;
+        }
+        m = grid.length;
+        n = grid[0].length;
+        visited = new boolean[m][n];
+        int res = 0;
+        for(int i=0; i<m; i++) {
+            for(int j=0; j<n; j++) {
+                if(grid[i][j]=='1' && !visited[i][j]) {
+                    dfs(grid, i, j);
+                    res++;
+                }
+            }
+        }
+        return res;
+    }
+    private void dfs(char[][] grid, int x, int y) {
+        visited[x][y] = true;
+        for(int i=0; i<4; i++) {
+            int newx = x + d[i][0];
+            int newy = y + d[i][1];
+            if(inArea(newx, newy) && grid[newx][newy]=='1' &&!visited[newx][newy]) {
+                dfs(grid, newx, newy);
+            }
+        }
+    }
+    private boolean inArea(int x, int y){
+        return x >= 0 && x < m && y >= 0 && y < n;
+    }
+    ```

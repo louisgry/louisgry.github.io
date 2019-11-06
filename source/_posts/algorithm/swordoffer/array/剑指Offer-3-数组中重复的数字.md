@@ -1,7 +1,7 @@
 ---
 title: '剑指Offer: 3. 数组中重复的数字'
 date: 2019-10-24 20:11:34
-categories: 算法
+categories: Algorithm
 tags: 
 - 剑指Offer
 - hashTable

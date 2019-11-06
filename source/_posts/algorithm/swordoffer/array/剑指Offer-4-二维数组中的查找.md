@@ -1,7 +1,7 @@
 ---
 title: "剑指Offer: 4. 二维数组中的查找"
 date: 2019-10-24 20:41:43
-categories: 算法
+categories: Algorithm
 tags: 
 - 剑指Offer
 - pointers

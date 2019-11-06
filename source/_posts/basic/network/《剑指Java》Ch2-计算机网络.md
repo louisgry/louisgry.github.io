@@ -3,10 +3,11 @@ title: "《剑指Java》Ch2-计算机网络"
 date: 2019-10-13 15:44:45
 categories: 计算机网络
 tags: 计网
-description: TCP三次握手、四次挥手、TCP、HTTP、Socket
+description: 计网简介、TCP三次握手、四次挥手、TCP、HTTP、Socket
 ---
 <!-- more -->
 # Ch2-计算机网络
+## 计网简介
 - 2-1：网络基础知识讲解
     - OSI开放式互联参考模型
         - 应用层：规定收发方必须使用固定长度的消息头 HTTP

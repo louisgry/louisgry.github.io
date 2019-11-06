@@ -1,7 +1,7 @@
 ---
 title: '剑指Offer: 6. 从尾到头打印链表'
 date: 2019-10-26 10:22:56
-categories: 算法
+categories: Algorithm
 tags: 
 - 剑指Offer
 - linkedlist
