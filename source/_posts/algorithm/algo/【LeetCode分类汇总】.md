@@ -17,7 +17,7 @@ description: 数据结构（栈、队列、链表、二叉树）、算法思想�
 ## queue
 - 队列
     - [102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)：[【102题解】](#102题解)
-    - [347. Top K Frequen Elements](https://leetcode.com/problems/top-k-frequent-elements/)：[【347题解】](#347题解)
+    - [347. Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)：[【347题解】](#347题解)
     - [279. Perfect Squares](https://leetcode.com/problems/perfect-squares/)：[【279题解-Queue】](#279题解-Queue)
 
 ## linkedlist
@@ -165,6 +165,7 @@ description: 数据结构（栈、队列、链表、二叉树）、算法思想�
         return true;
     }
     ```
+
 ### 144题解
 - stack
     - 144 Binary Tree Preorder Traversal：https://leetcode.com/problems/binary-tree-preorder-traversal/
@@ -273,6 +274,7 @@ description: 数据结构（栈、队列、链表、二叉树）、算法思想�
         return res;
     }
     ```
+
 ### 347题解
 - queue
     - 347 Top K Frequent Elements：https://leetcode.com/problems/top-k-frequent-elements/
@@ -328,7 +330,8 @@ description: 数据结构（栈、队列、链表、二叉树）、算法思想�
         }
     }
     ```
-###279题解-Queue
+
+### 279题解-Queue
 - queue
     - 279 Perfect Squares：https://leetcode.com/problems/perfect-squares/
         - 给定一个正整数n，求其由最少个完全平方数组成的和等于n的个数
@@ -370,7 +373,7 @@ description: 数据结构（栈、队列、链表、二叉树）、算法思想�
 
 ---
 **linkedlist**
-###206题解
+### 206题解
 - linkedlist
     - 206 Reverse Linked List：https://leetcode.com/problems/reverse-linked-list/
         - 反转一个链表
@@ -411,6 +414,7 @@ description: 数据结构（栈、队列、链表、二叉树）、算法思想�
         return pre;
     }
     ```
+
 ### 203题解
     - 203 Remove Linked List Elements：https://leetcode.com/problems/remove-linked-list-elements/
         - 删除链表中特定值的所有元素
@@ -436,6 +440,7 @@ description: 数据结构（栈、队列、链表、二叉树）、算法思想�
         return dummyHead.next;
     }
     ```
+
 ### 24题解
 - linkedlist
     - 24 Swap Nodes in Pairs：https://leetcode.com/problems/swap-nodes-in-pairs/
@@ -465,6 +470,7 @@ description: 数据结构（栈、队列、链表、二叉树）、算法思想�
         return dummyHead.next;
     }
     ```
+
 ### 237题解
 - linkedlist
     - 237 Delete Node in a Linked List：https://leetcode.com/problems/delete-node-in-a-linked-list/
@@ -489,6 +495,7 @@ description: 数据结构（栈、队列、链表、二叉树）、算法思想�
         return;
     }
     ```
+
 ### 19题解
 - linkedlist
     - 19 Remove Nth Node From End of List：https://leetcode.com/problems/remove-nth-node-from-end-of-list/
@@ -541,6 +548,7 @@ description: 数据结构（栈、队列、链表、二叉树）、算法思想�
         return dummyHead.next;
     }
     ```
+
 ### 234题解
 - linkedlist
     - 234 Palindrome Linked List：https://leetcode.com/problems/palindrome-linked-list/
@@ -608,6 +616,7 @@ description: 数据结构（栈、队列、链表、二叉树）、算法思想�
         return Math.max(maxDepth(root.left), maxDepth(root.right))+1;
     }
     ```
+
 ### 111题解
 - 111题解
     - 111 Minimum Depth of Binary Tree：https://leetcode.com/problems/minimum-depth-of-binary-tree/
@@ -637,7 +646,8 @@ description: 数据结构（栈、队列、链表、二叉树）、算法思想�
         return min;
     }
     ```
-###226题解
+
+### 226题解
 - 226题解
     - 226 Invert Binary Tree：https://leetcode.com/problems/invert-binary-tree/
         - 反转二叉树，左右子树对调
@@ -661,6 +671,7 @@ description: 数据结构（栈、队列、链表、二叉树）、算法思想�
         return root;
     }
     ```
+
 ### 100题解
 - 100题解
     - 100 Same Tree：https://leetcode.com/problems/same-tree/
@@ -891,6 +902,7 @@ description: 数据结构（栈、队列、链表、二叉树）、算法思想�
         middle.remove(middle.size()-1);
     }
     ```
+
 ### 129题解
 - 129题解
     - 129 Sum Root to Leaf Numbers：https://leetcode.com/problems/sum-root-to-leaf-numbers/
@@ -1312,6 +1324,7 @@ description: 数据结构（栈、队列、链表、二叉树）、算法思想�
         return false;
     }
     ```
+
 ### 220题解
 - 220题解
     - 220 Contain Duplicate III：https://leetcode.com/problems/contains-duplicate-iii/
@@ -1497,9 +1510,7 @@ description: 数据结构（栈、队列、链表、二叉树）、算法思想�
             nums[j] = t;
         }
     ```
-### 88题解
-- 88题解
-`remain`
+
 
 ---
 **pointers**
@@ -1531,6 +1542,7 @@ description: 数据结构（栈、队列、链表、二叉树）、算法思想�
         return result;
     }
     ```
+
 ### 11题解
 - 11题解
     - 11 Container With Most Water：https://leetcode.com/problems/container-with-most-water/ 
@@ -1557,6 +1569,7 @@ description: 数据结构（栈、队列、链表、二叉树）、算法思想�
         return area;
     }
     ```
+
 ### 125题解
 - 125题解
     - 125 Valid Palindrome：https://leetcode.com/problems/valid-palindrome/
@@ -1589,6 +1602,7 @@ description: 数据结构（栈、队列、链表、二叉树）、算法思想�
         return flag;
     }
     ```
+
 ### 345题解
 - 345题解
     - 345 Reverse Vowels of a String：https://leetcode.com/problems/reverse-vowels-of-a-string/
@@ -1657,6 +1671,7 @@ description: 数据结构（栈、队列、链表、二叉树）、算法思想�
         return min;
     }
     ```
+
 ### 3题解
 - 3题解
     - 3 Longest Substring Without Repeating Characters：https://leetcode.com/problems/longest-substring-without-repeating-characters/
@@ -2050,6 +2065,7 @@ description: 数据结构（栈、队列、链表、二叉树）、算法思想�
         return memo[n];
     }
     ```
+
 ### 91题解
 - dp
     - 91 Decode Ways：https://leetcode.com/problems/decode-ways/
@@ -2605,6 +2621,7 @@ description: 数据结构（栈、队列、链表、二叉树）、算法思想�
         return x>=0 && x<m && y>=0 && y<n;
     }
     ```
+
 ### 200题解
 - backtracking
     - 200 Number of Islands：https://leetcode.com/problems/number-of-islands/
@@ -2650,6 +2667,7 @@ description: 数据结构（栈、队列、链表、二叉树）、算法思想�
         return x >= 0 && x < m && y >= 0 && y < n;
     }
     ```
+    
 ### 51题解
 - backtracking
     - 51 N Queens：https://leetcode.com/problems/n-queens/

@@ -12,7 +12,7 @@ tags:
         - Input: binary tree [3,9,20,null,null,15,7]
         - Output: [[3], [9,20], [15,7]]
         <!-- more -->
-    - 思路：
+    - 思路：队列
     - 时间复杂度：O(n)
     - 空间复杂度：O(n)
     ```java

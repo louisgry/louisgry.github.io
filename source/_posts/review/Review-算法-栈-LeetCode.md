@@ -7,14 +7,19 @@ tags:
 - 二刷
 description: 有效的括号、二叉树的前序遍历（递归、**非递归**）
 ---
+
+## stack
 - 栈
     - [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)：有效的括号[【20题解】](#20题解) 
     - [144. Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/)：二叉树的前序遍历[【144题解】](#144题解)
 
 ### 20题解
+- 栈：只关心最近一次操作
 ```java
 class Solution {
     public boolean isValid(String s) {
+        // 时间复杂度：O(n)
+        // 空间复杂度：O(n)
         // 遍历string
         // -- 如果是左括号，压入栈
         // -- 如果是右括号，弹出栈
@@ -66,8 +71,10 @@ class Solution {
 ```java
 class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
+        // 时间复杂度：O(n)
+        // 空间复杂度：O(h)
         // 递归解法：根节点->左节点->右节点
-        // -- 要返回List，所以需要辅助函数来做递归
+        // 要返回List，所以需要辅助函数来做递归
 
         List<Integer> res = new ArrayList<Integer>();
         preorderTraversal(root, res);
@@ -85,10 +92,12 @@ class Solution {
     }
 }
 ```
-- 非递归解法
+- 非递归解法（栈+Command）
 ```java
 class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
+        // 时间复杂度：O(n)
+        // 空间复杂度：O(h)
         // 非递归解法：栈（递归的本质是栈）
         // 把第一个指令go-root压入栈，while循环直到stack为空
         // -- 如果指令是print，把command.node的值add进List
