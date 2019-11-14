@@ -1,7 +1,7 @@
 ---
 title: 《Redis入门》
 date: 2019-7-20 21:47:07
-categories: 数据库
+categories: Daily
 tags: 
 - Redis
 description: NoSQL、Redis、Jedis、Redis数据结构（string、hash、list、set、zset）、Redis特性（多数据库、事务）、持久化（RDB、AOF）

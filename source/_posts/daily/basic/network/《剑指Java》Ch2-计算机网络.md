@@ -1,7 +1,7 @@
 ---
 title: "《剑指Java》Ch2-计算机网络"
-date: 2019-11-04 11:56:35
-categories: 计算机网络
+date: 2019-10-12 11:56:35
+categories: Daily
 tags: 计网
 description: 计网简介、TCP三次握手、四次挥手、TCP、HTTP、Socket
 ---

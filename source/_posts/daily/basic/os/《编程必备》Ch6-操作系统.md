@@ -1,7 +1,7 @@
 ---
 title: 《编程必备》Ch6-操作系统
-date: 2019-11-02 13:35:35
-categories: 操作系统
+date: 2019-10-16 13:35:35
+categories: Daily
 tags: 操作系统
 description: os简介、进程管理、作业管理、存储管理、文件管理、设备管理
 ---
