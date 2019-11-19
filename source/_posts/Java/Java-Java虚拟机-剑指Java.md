@@ -2,7 +2,9 @@
 title: Java：Java虚拟机-剑指Java
 date: 2019-11-12 20:32:04
 categories: Java
-tags: Java虚拟机
+tags: 
+- Ebbinghaus
+- Java虚拟机
 description: 类加载（平台无关性、Class Loader、loadClass和forName）、内存模型（线程独占、线程共享）、GC（标记算法、清除算法、新生代GC、老年代GC、适用于新生代和老年代的GC）、面试题
 ---
 
@@ -178,8 +180,21 @@ description: 类加载（平台无关性、Class Loader、loadClass和forName）
             - survivor区：from、to
         ![](/images/19-11-12/1.jpg)
         - 老年代：存放生命周期较长的对象
-        - GC分类：Minor GC（年轻代，复制算法）、Full GC（老年代）比较慢
-            - 触发Full GC的条件：6个（主要：老年代、永久代空间不足、调用`System.gc()`）
+        - GC分类
+            - Minor GC：回收新生代，速度快
+            - Full GC：回收新生代和老年代，速度慢
+        - 内存分配策略
+            - 对象优先在Eden区分配
+            - 大对象直接进入老年代
+            - 长期存活的对象进入老年代
+            - 动态对象年龄判断：Survivor 中相同年龄所有对象大小的总和大于 Survivor 空间的一半，则年龄大于或等于该年龄的对象可以直接进入老年代
+            - 空间分配担保：使用复制算法的 Minor GC 需要老年代的内存空间作担保
+        - 触发Full GC的条件：主要是前3个
+            - 调用`System.gc()`
+            - 老年代空间不足
+            - JDK1.7及以前永久代空间不足
+            - 空间分配担保失败
+            - CMS GC时出现concurrent mode failure
         - 常用性能调优参数
             - `-XX:SurvivorRatio`：Eden和Survivor的比值，默认8:1
             - `-XX:NewRatio`：老年代和年轻代内存大小的比例

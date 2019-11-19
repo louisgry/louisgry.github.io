@@ -2,7 +2,9 @@
 title: "计算机网络：概述-剑指Java"
 date: 2019-11-04 11:56:35
 categories: 计算机网络
-tags: 计网
+tags: 
+- Ebbinghaus
+- 计网
 description: 计网简介、TCP三次握手、四次挥手、TCP、HTTP、Socket
 ---
 <!-- more -->

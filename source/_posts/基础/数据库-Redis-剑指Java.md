@@ -3,6 +3,7 @@ title: 数据库：Redis-剑指Java
 date: 2019-11-14 20:47:07
 categories: 数据库
 tags: 
+- Ebbinghaus
 - Redis
 description: Redis入门（NoSQL、Redis、Jedis、Redis数据结构、Redis特性、持久化）、Redis进阶（从海量数据中查询某一固定前缀的key、分布式锁、异步队列、持久化原理、主从同步、集群）
 ---

@@ -2,7 +2,9 @@
 title: Java：Java基础-imooc
 date: 2019-11-13 20:32:45
 categories: Java
-tags: Java基础
+tags: 
+- Ebbinghaus
+- Java基础
 description: 第一季（Java初体验、Java基础）、第二季（类和对象、封装、继承、多态）、第三季（异常、常用类、集合框架）
 ---
 

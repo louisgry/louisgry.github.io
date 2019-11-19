@@ -3,6 +3,7 @@ title: '算法：链表-LeetCode'
 date: 2019-11-10 22:58:17
 categories: 算法
 tags: 
+- Ebbinghaus
 - Review
 - 二刷
 description: 反转链表、移除链表元素、两两交换链表中的节点、删除链表中的节点、删除链表的倒数第N个节点、回文链表

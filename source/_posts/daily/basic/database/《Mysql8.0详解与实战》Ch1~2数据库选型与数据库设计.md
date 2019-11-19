@@ -4,7 +4,7 @@ date: 2019-11-18 21:47:07
 categories: Daily
 tags: 
 - MySQL
-description: 数据库选型（SQL or NoSQL、选型原则）、数据设计（业务分析、逻辑设计、物理设计）
+description: 数据库选型（SQL or NoSQL、选型原则）、数据库设计（业务分析、逻辑设计、物理设计）
 ---
 
 # Ch1-开篇引导
