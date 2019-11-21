@@ -1,9 +1,8 @@
 ---
 title: '算法：队列-LeetCode'
 date: 2019-11-09 12:48:17
-categories: 算法
+categories: Daily
 tags: 
-- Ebbinghaus
 - Review
 - 二刷
 description: 二叉树的层次遍历、完全平方数、前K个高频元素

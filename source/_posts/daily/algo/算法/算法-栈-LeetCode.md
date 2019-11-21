@@ -1,9 +1,8 @@
 ---
 title: '算法：栈-LeetCode'
 date: 2019-11-06 16:48:17
-categories: 算法
+categories: Daily
 tags: 
-- Ebbinghaus
 - Review
 - 二刷
 description: 有效的括号、二叉树的前序遍历（递归、**非递归**）
