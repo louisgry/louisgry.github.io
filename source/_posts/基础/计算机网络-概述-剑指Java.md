@@ -30,7 +30,7 @@ description: 计网简介、TCP三次握手、四次挥手、TCP、HTTP、Socket
         - 端口（协议端口）：进程通信标识
         - TCP Flags：URG、ACK、PSH、RST、SYN、FIN
     - TCP的三次握手
-        - ![TCP的三次握手](/images/19-10-13/1.jpg) 
+        - ![TCP的三次握手](/images/basic/network/1.jpg) 
     - 关于三次握手的问题
         - 为什么要进行三次握手才能建立起连接？
             - 为了初始化Sequence Number的初始值
@@ -40,7 +40,7 @@ description: 计网简介、TCP三次握手、四次挥手、TCP、HTTP、Socket
             - 保活机制
 - 2-4：TCP的四次挥手
     - TCP的四次挥手
-        - ![TCP的四次挥手](/images/19-10-13/2.jpg) 
+        - ![TCP的四次挥手](/images/basic/network/2.jpg) 
     - 关于四次挥手的问题
         - 为什么需要四次握手才能断开连接？
             - 因为全双工，收发方手续要FIN报文和ACK报文
@@ -133,9 +133,9 @@ description: 计网简介、TCP三次握手、四次挥手、TCP、HTTP、Socket
 ## Socket
 - 2-10：socket相关
     - Socket：是TCP/IP协议的抽象，是操作系统对外开放的接口
-        - ![Socket](/images/19-10-13/3.jpg) 
+        - ![Socket](/images/basic/network/3.jpg) 
     - Socket通信
-        - ![Socket通信](/images/19-10-13/4.jpg) 
+        - ![Socket通信](/images/basic/network/4.jpg) 
     - Socket相关面试题
         - TCP实现客户端和服务器的通信
         - UDP实现客户端和服务器的通信

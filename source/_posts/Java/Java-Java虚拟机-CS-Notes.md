@@ -38,8 +38,31 @@ description: 运行时数据区域：程序计数器、Java虚拟机堆、本地
 ## 直接内存
 
 # 二、垃圾收集
+- 垃圾收集针对堆和方法区进行
+- 程序计数器、虚拟机栈、本地方法栈属于线程私有的，只存在于线程的生命周期内，线程结束后就会消失，不需要进行垃圾回收
+
 ## 判断一个对象是否可被回收
 ### 1. 引用计数算法
+- 为对象添加一个引用计数器，当对象增加一个引用时计数器加1，引用失效时计数器减1，回收引用计数为0的对象
+- 缺点：循环引用（引用计数器永远不为0）
+```java
+public class ReferenceCountingGC {
+
+    public Object instance = null;
+    
+    public static void main(String[] args) {
+        // 循环引用，无法回收
+        ReferenceCountingGC a = new ReferenceCountingGC();
+        ReferenceCountingGC b = new ReferenceCountingGC();
+        a.instance = b;
+        b.instance = a;
+        
+        a = null;
+        b = null;
+    }
+}
+```
+
 ### 2. 可达性分析算法
 ### 3. 方法区的回收
 ### 4. finalize()

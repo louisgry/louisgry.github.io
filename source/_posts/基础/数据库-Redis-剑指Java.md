@@ -175,7 +175,7 @@ description: Redis入门（NoSQL、Redis、Jedis、Redis数据结构、Redis特�
     - 主流应用架构
         - 穿透：缓存层查询不到数据，穿透到存储层查询
         - 熔断：当存储层宕机时，请求只访问缓存层
-        ![](/images/19-11-14/1.jpg)
+        ![](/images/basic/redis/1.jpg)
     - 缓存中间件：Memcache、Redis
         - Memcache代码层次类型Hash，支持简单数据类型
         - Memcache缺点：不支持数据持久化存储、不支持主从同步、不支持分片 (Sharding)
