@@ -1,12 +1,12 @@
 ---
-title: 《点餐系统》买家端模块开发：类目、商品
-date: 2019-11-04 18:57:50
+title: 项目：微信点餐系统-imooc
+date: 2019-11-23 11:40:43
 categories: 项目
 tags: 
 - 点餐系统
-description: 项目设计、项目起步、买家端类目、买家端商品
+description: 买家端（类目、商品、订单）
 ---
-<!-- more -->
+
 https://github.com/louisgry/wechat-ordering-system
 
 # Ch1-课程介绍
@@ -191,3 +191,51 @@ https://github.com/louisgry/wechat-ordering-system
         - 先进入不会跳转页：`192.168.56.101/#/order`
         - F12下console输入：`document.cookie='openid=abc'`
         - 然后进入首页：`192.168.56.101`
+
+
+# Ch6-买家端订单
+- dataobject
+    - 新建OrderMaster
+    - 新建OrderDetail
+- enums
+    - 新建OrderStatusEnum枚举
+    - 新建PayStatusEnum枚举
+- repository
+    - 新建OrderMasterRepository接口
+        - `findByBuyerOpenid`：根据买家openid查询订单
+        - test下做单元测试
+    - 新建OrderDetailRepository接口
+        - `findByOrderId`：根据订单id查询订单详情
+        - test下做单元测试
+    - Pageable是个接口，PageRequest是实现类
+- dto
+    - 新建OrderDTO类
+    - 新建CartDTO类
+- enums
+    - 新建ResultEnum枚举类
+- exception
+    - 新建SellException类
+- utils
+    - 新建KeyUtil工具类
+- converter
+    - 新建OrderMaster2OrderDTOConverter转换器类
+- service
+    - 修改ProductService接口
+        - 增加加库存方法：increaseStock（`@Transactional`）
+        - 增加扣库存方法：decreaseStock
+    - 新建OrderService接口
+        - 声明六个方法：`create、findOne、findList、cancel、finish、paid`
+        - test：`@Slf4j`：`log.info("【创建订单】result={}", result)`
+- form
+    - 新建OrderForm
+- converter
+    - 新建OrderForm2OrderDTOConverter
+    - 添加Gson依赖
+    ```
+    <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+    </dependency>
+    ```
+- controller
+    - 新建BuyerOrderController类

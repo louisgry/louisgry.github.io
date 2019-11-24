@@ -1,10 +1,11 @@
 ---
-title: 《Mysql8.0详解与实战》Ch1~2数据库选型与数据库设计
-date: 2019-11-18 21:47:07
+title: 数据库：MySQL-Mysql8.0详解与实战
+date: 2019-11-14 20:47:07
 categories: 数据库
 tags: 
-- MySQL
-description: 数据库选型（SQL or NoSQL、选型原则）、数据库设计（业务分析、逻辑设计、物理设计）
+- Ebbinghaus
+- Redis
+description: 数据库选型（SQL or NoSQL、选型原则）<br>数据库设计（业务分析、逻辑设计、物理设计）<br>数据库访问<br>SQL开发<br>SQL优化<br>事务和高并发
 ---
 
 # Ch1-开篇引导
