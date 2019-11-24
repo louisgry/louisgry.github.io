@@ -1,41 +1,73 @@
 ---
 title: Java：Java虚拟机-CS-Notes
-date: 2019-11-23 19:32:04
+date: 2019-11-21 19:32:04
 categories: Java
 tags: 
 - Ebbinghaus
 - Java虚拟机
-description: 运行时数据区域：程序计数器、Java虚拟机堆、本地方法栈、Java堆、方法区、运行时常量池、直接内存<br>垃圾收集：判断一个对象是否可被回收、引用类型、垃圾收集算法、垃圾收集器<br>内存分配与回收策略：Minor GC 和 Full GC、内存分配与回收策略、Full GC的触发条件<br>类加载机制：类的生命周期、类加载过程、类初始化时机、类与类加载器、类加载器分类、双亲委派模型、自定义类加载器实现
+description: 运行时数据区域：程序计数器、Java虚拟机栈、本地方法栈、Java堆、方法区、运行时常量池、直接内存<br>垃圾收集：判断一个对象是否可被回收、引用类型、垃圾收集算法、垃圾收集器<br>内存分配与回收策略：Minor GC 和 Full GC、内存分配与回收策略、Full GC的触发条件<br>类加载机制：类的生命周期、类加载过程、类初始化时机、类与类加载器、类加载器分类、双亲委派模型、自定义类加载器实现
 ---
 > 《深入理解Java虚拟机》
 
 
 # 一、运行时数据区域
-## 程序计数器
+- Java虚拟机由四部分组成：Class Loader(类加载器)、Execution Engine(执行引擎)、Native Interface(本地接口)、Runtime Data Area(运行时数据区域)
+- 运行时数据区域：JVM在执行Java程序的过程中会把它所管理的内存划分为若干个不同的数据区域
+    - JDK1.8 JVM运行时数据区域概览：
+    ![](/images/java/jvm/1.png)
 
-## Java虚拟机堆
+## 程序计数器
+- 程序计数器（Program Counter Register）是一块较小的内存空间，可以看作是当前线程所执行的字节码的行号指示器
+- 即记录正在执行的虚拟机字节码指令的地址
+
+## Java虚拟机栈
+- Java虚拟机栈描述的是Java方法执行的内存模型：每个方法在执行的同时会创建一个栈帧，用于存储局部变量表、操作数栈、常量池引用等信息
+- 从方法调用直至执行完成的过程，对应着一个栈帧在Java虚拟机栈中入栈和出栈的过程
+- 可以通过`-Xss`参数来指定每个线程的Java虚拟机栈内存大小，JDK1.4默认256K，JDK1.5+默认1M
+```java
+java -Xss2M HackTheJava
+```
+- 该区域可能抛出以下异常
+    - 当线程请求的栈深度超过最大值，会抛出StackOverflowError异常
+    - 栈进行动态扩展时，如果无法申请到足够内存，会抛出OutOfMemoryError异常
+    ![](/images/java/jvm/2.png)
 
 ## 本地方法栈
+- 本地方法栈：与虚拟机栈类似，区别是本地方法栈为本地方法服务
+- 本地方法一般是使用其他语言编写的，并且被编译为基于本机硬件和操作系统的程序，对这些方法需特别处理
+    - JNI：Java本地接口（Java Native Interface）是一种编程框架，使得Java虚拟机中的Java程序可以调用本地库，也可以被其他程序调用
+    ![](/images/java/jvm/3.png)
 
 ## Java堆
-    - Java堆
-        - 对象实例的分配区域
-        - GC管理的主要区域（新生代、老年代）
-    - Java内存模型中堆和栈的区别？
-        - 五个方面：管理方式、空间大小、碎片相关、分配方式、效率
-        - https://www.zhihu.com/question/29833675/answer/82661572
-    - 元空间、堆、线程独占之间的联系（内存角度）
-        - 元空间（Class）-> Java堆（Object）-> 线程独占（程序计数器、虚拟机栈、本地方法栈）
+- Java堆：所有的对象都在堆中分配内存，是垃圾收集的主要区域（GC堆）
+- 主要采用分代收集算法，其主要思想是针对不同类型的对象采取不同的垃圾回收算法
+    - 新生代（Young Generation）
+    - 老年代（Old Generation）
+- 堆不需要连续内存，并且可以动态增加内存，增加失败会抛出OutOfMemoryError异常
+- 可以通过`-Xms`和`-Xmx`参数来指定一个程序的堆内存大小，第一个参数设置初始值，第二个设置最大值
+```java
+java -Xms1M -Xmx2M HackTheJava
+```
+
 ## 方法区
-     - 永久代的不足
-        - 字符串常量池存在永久代中，容易出现性能问题和内存溢出
-        - 类和方法的信息大小难以确定，永久代大小的指定困难
-        - 永久代回收效率偏低，给GC带来不必要的复杂性
-        - 永久代是HotSpot特有，不方便与其他JVM的集成 
+- 方法区：用于存放已被加载的类信息、常量、静态变量、即时编译器（JIT编译器）编译后的代码等数据
+- 和堆一样不需要连续的内存，并且可以动态扩展，扩展失败也会抛出OutOfMemoryError异常
+- 对方法区的垃圾回收主要目标是：常量池的回收、对类的卸载，但是比较难实现
+- 永久代
+    - HotSpot虚拟机把其当作永久代进行垃圾回收，但很难确定永久代的大小，因为有很多因素的影响，并且每次Full GC后永久代的大小都会改变，所以经常抛出OOM异常
+    - 为了更容易管理方法区，从JDK1.8开始I，移除永久代，并把方法区移至元空间，其位于本地内存中，而不是虚拟机内存中
+- 方法区是一个JVM规范，永久代与元空间都是其实现方式。JDK1.8后，原来永久代的数据被分到了堆和元空间中。元空间存储类的元信息，堆存储静态变量和常量池
 
 ## 运行时常量池
+- 运行时常量池：是方法区的一部分
+- Class文件中的常量池会在类加载后被放入运行时常量池
+- 除了在编译期生成的常量，也允许动态生成，如String类的intern()方法
 
 ## 直接内存
+- JDK1.4中引入了NIO（New Input/Output）类，其可以使用Native函数库直接分配堆外内存，然后通过Java堆里的DirectByteBuffer对象作为这块内存的引用进行操作
+- 好处：能在某些场景中显著提高性能，因为避免了在堆内存和堆外内存来回拷贝数据
+
+
 
 # 二、垃圾收集
 - 垃圾收集针对Java堆和方法区进行
@@ -65,18 +97,19 @@ public class ReferenceCountingGC {
 
 ### 2. 可达性分析算法
 - 以GC Roots为起始点进行搜索，可达的对象都是存活的，不可达的对象可被回收
+- Java虚拟机使用该算法来判断对象是否可被回收
 - 可作为GC Roots的对象
     - 虚拟机栈中局部变量表中引用的对象
     - 本地方法栈JNI中引用的对象
     - 方法区中静态属性引用的对象
     - 方法区中常量引用的对象
-    ![](/images/java/jvm/1.png)
+    ![](/images/java/jvm/4.png)
 
 ### 3. 方法区的回收
-- 永久代的垃圾收集主要回收两部分内容：废弃常量和无用的类
-- 废弃常量
-    - 与回收堆中的对象类似。如字符串"abc"进入常量池，却没有String对象引用，则被回收
-- 无用的类
+- 永久代的垃圾收集主要回收两部分内容：废弃常量和无用的类（常量池的回收和对类的卸载）
+- 废弃常量：与回收堆中的对象类似。如字符串"abc"进入常量池，却没有String对象引用，则被回收
+- 为了避免内存溢出，在大量使用反射和动态代理的场景都需要虚拟机具备类卸载功能
+- 需同时满足以下3个条件才算是无用的类
     - 该类所有的实例都已经被回收，此时Java堆中不存在该类的任何实例
     - 加载该类的ClassLoader已经被回收
     - 该类对应的Class对象没有在任何地方被引用，也就无法在任何地方通过反射访问该类的方法
@@ -93,151 +126,190 @@ public class ReferenceCountingGC {
     ```
 
 ## 引用类型
+- 判断对象是否可被回收都与引用有关
+
 ### 1. 强引用
+- 强引用：被强引用关联的对象不会被回收，可以通过将对象设置为null来弱化引用，使其被回收
+```java
+String str = new String("abc");
+```
+
 ### 2. 软引用
+- 软引用：被软引用关联的对象只有在内存不够的情况下才会被回收
+```java
+SoftReference<String> a = new SoftReference<String>(str);
+```
+
 ### 3. 弱引用
+- 弱引用：被弱引用关联的对象一定会被回收，即只能存活到下一次垃圾回收发生之前
+```java
+WealkReference<String> b = new WeakReference<String>(str);
+```
+
 ### 4. 虚引用
-    - Java中的强引用、软引用、弱引用、虚引用的作用是什么？
-        - 强引用：抛出OOM也不会回收强引用对象，通过将对象设置为null来弱化引用，使其被回收
-        ```
-        String str = new String("abc");
-        ```
-        - 软引用：对象处在有用但非必须状态，内存空间不足时回收，可以用来实现高速缓存
-        ```
-        SoftReference<String> a = new SoftReference<String>(str);
-        ```
-        - 弱引用：非必须的对象，比软引用更弱，GC时会回收
-        ```
-        WealkReference<String> b = new WeakReference<String>(str);
-        ```
-        - 虚引用：不会决定对象的生命周期，任何时候都有可能被回收，必须和引用队列ReferenceQueue联合使用
-        ```
-        String str = new String("abc");
-        ReferenceQueue queue = new ReferenceQueue();
-        PhantomReference ref = new PhantomReference(str, queue);
-        ```
-        - 强引用、软引用、弱引用、虚引用区别：
-        ![](/images/19-11-12/4.jpg)
-        ![](/images/19-11-12/5.jpg)
+- 虚引用：一个对象是否有虚引用，不会对其生存时间造成影响，也无法通过虚引用得到一个对象
+- 目的：能在这个对象被回收前收到一个系统通知
+```java
+String str = new String("abc");
+ReferenceQueue queue = new ReferenceQueue();
+PhantomReference ref = new PhantomReference(str, queue);
+```
 
 ## 垃圾收集算法
 ### 1. 标记-清除算法
+- 标记-清除（Mark-Sweep），分为标记和清除两个阶段：首先标记出所有需要回收的对象，在标记完成后统一回收被标记的对象，标记过程使用标记方法判定
+- 缺点
+    - 效率问题：标记和清除过程效率不高
+    - 空间问题：会产生大量不连续的内存碎片，导致无法给大对象分配内存
+
 ### 2. 标记-整理算法
+- 标记-整理（Mark-Compact），让所有存活的对象都向一端移动，然后直接清理掉端边界意外的内存
+- 优点：不会产生内存碎片
+- 缺点：需要移动大量对象，处理效率比较低
+
 ### 3. 复制算法
+- 复制（Copying），将内存划分为大小相等的两块，每次只使用其中一块，当这一块内存用完了就将还存活的对象复制到另一块上面，然后把使用过的内存空间进行清理
+- 现代虚拟机都是用复制算法回收新生代，但是不是划分为相等的两块，而是Eden:Survivor默认为8:1，每次只使用Eden和其中一块Survivor（From、To是变化的），回收时将Eden和From中还存活的对象复制到To区，然后清理Eden和From区
+- 缺点：只使用了内存的一半
+    ![](/images/java/jvm/5.png)
+
 ### 4. 分代收集算法
+- 分代收集（Generational Collection），现代虚拟机所采用，其根据对象存活周期的不同将内存划分为块，不同块采用不同的收集算法
+- 新生代：使用复制算法
+- 老年代：使用标记-清除算法，或标记-整理算法
 
 ## 垃圾收集器
+- HotSpot虚拟机中的7个垃圾收集器，连线表示可以配合使用
+    - 单线程与多线程：ParNew、Parallel Scavenge、Parallel Old是多线程的
+    - 串行与并行：垃圾收集器与用户程序是交替执行或同时执行，只有CMS和G1是并行的
+    ![](/images/java/jvm/6.png)
+
 ### 1. Serial
+- Serial的意思是串行，即以串行的方式执行，Serial是单线程的收集器，只会使用一个线程进行垃圾收集
+- Client下默认的新生代收集器，因为该场景下内存一般不会很大
+- 优点：简单高效，在单CPU下，由于没有线程交互的开销，因此有最高的单线程收集效率
 
 ### 2. ParNew
+- ParNew是Serial收集器的多线程版本
+- Server下默认的新生代收集器，除了性能外，主要是因为除了Serial，只有ParNew能与CMS收集器配合使用
 
 ### 3. Parallel Scavenge
+- Parallel Scavenge也是多线程收集器，其收集目标是尽可能缩短垃圾收集时用户线程的停顿时间，吞吐量优先
+- 系统吞吐量=运行用户程序时间/(运行用户程序时间+GC时间)
+- 缩短停顿时间是以牺牲吞吐量和新生代空间换取的：新生代空间变小，垃圾回收变频繁，导致吞吐量下降
+- 可以通过一个开关参数打开GC自适应的调节策略（GC Ergonomics），就不用手动设置新生代大小、Eden和Survivor比例、晋升老年代对象年龄等参数
 
 ### 4. Serial Old
+- Serial Old是Serial收集器的老年代版本，Client下的老年代收集器
+- 如果用在Server场景下，有两大用途
+    - 在JDK1.5及以前，与Parallel Scavenge配合使用
+    - 作为CMS收集器的后备预案，在并发收集发生Concurrent Mode Failure时使用
 
 ### 5. Parallel Old
+- Parallel Old是Parallel Scavenge的老年代版本
+- 在注重吞吐量和CPU资源敏感的场景，可以优先考虑Parallel Scavenge和Parallel Old收集器
 
 ### 6. CMS
+- CMS（Concurrent Mark Sweep），并发标记-清除
+    - 初始标记：仅仅只是标记一下GC Roots能直接关联到的对象，速度很快，需要停顿
+    - 并发标记：进行GC Roots Tracing的过程，在整个回收过程中耗时最长，不需要停顿
+    - 重新标记：为了修正并发标记期间用户程序继续运作而导致标记产生变动的那一部分对象的标记记录，需用停顿
+    - 并发清除：不需要停顿
+- 缺点
+    - 吞吐量低：低停顿时间是以牺牲吞吐量为代价的，导致CPU利用率不高
+    - 无法处理浮动垃圾，可能会出现Concurrent Mode Failure
+        - 浮动垃圾是指并发清除阶段由于用户线程继续运行而产生的垃圾，这部分垃圾只能到下一次GC才被回收
+        - 由于浮动垃圾的存在，因此需要预留出一部分内存，此时CMS不能像其他收集器那样等待老年代快满了才回收
+        - 如果预留的内存不够存放，就会出下Concurrent Mode Failure，这时会触发Full GC，使用Serial old替换CMS
+    - 空间问题：标记-清除算法导致的空间碎片，会出现老年代剩余，但无法找到足够大的连续空间来分配当前对象，要提前触发一次Full GC
 
-### 7. G1 (Garbage First)
-    - 适用于年轻代和老年代的收集器
-        - G1收集器（复制+标记-整理算法）：Garbage First
-            - 特点：并发和并行、分代收集、空间整合、可预测的停顿
-            - 将整个Java堆内存划分成多个大小相等的Region
-            - 年轻代和老年代不再物理隔离
-        ![](/images/19-11-12/2.jpg)
-        - 前沿GC：Epsilon GC、ZGC
-        - 垃圾收集器之间的联系：
-        ![](/images/19-11-12/3.jpg)
+### 7. G1
+- G1（Garbage First），是一款面向服务端应用的垃圾收集器，在多CPU和大内存场景下有很好的性能
+- G1可以直接对新生代和老年代一起回收，其把堆划分成多个大小相等的独立区域（Region），新生代和老年代不再物理隔离
+- 每个Region都有一个Remembered Set，用来记录该Region对象的引用对象所在的Region，通过使用该Set在可达性分析时可以避免全堆扫描
+    - 初始标记
+    - 并发标记
+    - 最终标记：为了修正并发标记期间用户程序继续运作而导致标记产生变动的那一部分对象的标记记录，虚拟机将对象变化记录在Remembered Set Logs里面，并合并数据到Set中，需要停顿，可并行
+    - 筛选回收：首先对Region中的回收价值和成本进行排序，根据用户所期望的GC停顿时间来制定回收计划，可并行
+- 特点
+    - 空间整合：整体是标记-整理算法，局部（两Region之间）是复制算法，不会有内存碎片
+    - 可预测的停顿：能让使用者明确指定在一个长度为M毫秒的时间内，消耗在GC上的时间不超过N毫秒
+    ![](/images/java/jvm/7.png)
+
 
 
 # 三、内存分配与回收策略
 ## Minor GC 和 Full GC
-
+- Minor GC：回收新生代，新生代对象存活时间短，Minor GC执行频繁，速度也较快，Eden空间满时触发一次Minor GC
+- Full GC：回收新生代和老年代，老年代对象存活时间长，Full GC执行较少，速度较慢
 
 ## 内存分配与回收策略
 ### 1. 对象优先在Eden分配
+- 大多数情况下，对象在新生代Eden区分配，当其空间不足时，发起Minor GC
 
 ### 2. 大对象直接进入老年代
+- 大对象：值需要连续内存空间的对象，如很长的字符串或数组
+- 经出现大对象会提前触发垃圾收集以获取足够的连续空间分配给大对象
+- `-XX:PretenureSizeThreshold`，大于此值的对象直接在老年代分配，避免在Eden和Survivor间大量内存复制
 
 ### 3. 长期存活的对象将进入老年代
+- 为对象定义年龄计数器，对象在Eden出生并经过Minor GC依然存活，将移动至Survivor中，年龄增加1岁，增加到一定年龄则移动到老年代中
+- `-XX:MaxTenuringThreshold`定义年龄的阈值
 
 ### 4. 动态对象年龄判定
+- 除了达到年龄阈值外，如果在Survivor中相同年龄的所有对象大小的总和大于Survivor空间的一半，则年龄大于或等于该年龄的对象可以直接进入老年代
 
 ### 5. 空间分配担保
+- 在Minor GC前，虚拟机会先检查老年代最大可用的连续空间是否大于新生代所有对象的总空间，成立则Minor GC是安全的
+- 不成立，虚拟机会查看HandlePromotionFailure的值是否允许担保失败，如果允许继续检查老年代可用空间是否大于晋升到老年代对象的平均大小，如果大于则进行Minor GC，否则进行Full GC
 
 ## Full GC的触发条件
 ### 1. 调用System.gc()
+- 知识建议虚拟机执行Full GC，但不一定真正执行
 
 ### 2. 老年代空间不足
+- 老年代不足：大对象、长期存活的对象进入老年代
+- 可以通过`-Xmn`参数调大新生代的大小，让对象尽量在新生代被回收。还可以通过`-XX:MaxTenuringThreshold`调大晋升老年代的年龄，让对象在新时代存活久一点
 
 ### 3. 空间分配担保失败
+- 使用复制算法的Minor GC需要老年代的内存空间作担保，如果失败会进行Full GC
 
 ### 4. JDK1.7及以前的永久代空间不足
+- 当系统中要加载的类、反射的类和调用的方法较多时，永久代空间可能会不足，在未采用CMS时会执行Full GC，如果回收不了则抛出OOM异常
 
 ### 5. Concurrent Mode Failure
+- 执行CMS GC的同时有对象要放入老年代，而此时老年代空间不足（如浮动垃圾导致），会报Concurrent Mode Failure错误，并触发Full GC
 
 
 # 四、类加载机制
-- 反射
-    - 面试问反射 -> 背反射的概念（没用） -> 写一个反射的例子（应在理解后记忆）
-    - 反射：**将Java类中的全部成份映射为一个个Java对象**
-    ```
-    Class rc = Class.forName("com.imooc.interview.reflect.Robot");
-    Robot r = (Robot) rc.newInstance();
-    System.out.println("Class name: " + rc.getName());
-    r.sayHi("hello Reflect");
+- 类是在运行期间第一次使用时动态加载的，而不是一次性全部加载，因为其会占用很多的内存
 
-    Method getHello = rc.getDeclaredMethod("throwHello", String.class);
-    getHello.setAccessible(true);
-    Object str = getHello.invoke(r, "Bob");
-    System.out.println("getHello: " + str);
-
-    Method sayHi = rc.getMethod("sayHi", String.class);
-    sayHi.invoke(r, "welcome");
-
-    Field name = rc.getDeclaredField("name");
-    name.setAccessible(true);
-    name.set(r, "Alice");
-    sayHi.invoke(r, "welcome");
-    ```
 ## 类的生命周期
+- 类的生命周期有7个阶段
+    - **加载（Loading）**
+    - **验证（Verification）**
+    - **准备（Preparation）**
+    - **解析（Resolution）**
+    - **初始化（Initialization）**
+    - 使用（Using）
+    - 卸载（Unloading）
+    ![](/images/java/jvm/8.png)
 
-## 类加载过程    
-- 为什么JVM不直接将源码解析成机器码
-    - 免去重复的准备工作，如各种检查
-- JVM如何加载.class文件
-    - Java虚拟机（内存模型+GC）
-        - 由四部分组成：Class Loader(类加载器)、Execution Engine(执行引擎)、Native Interface(本地接口)、Runtime Data Area(运行时数据区域)
-    - JVM如何加载.class文件
-        - JVM由四部分组成，JVM主要通过Class Loader把符合格式要求的.class文件加载到内存中，再通过Execution Engine解析文件里的字节码，并提交给操作系统去执行
-        - 兼容性：可以由其他语言生成字节码
-        ![](/images/19-11-11/2.png)
+## 类加载过程
+- 类加载5阶段：加载、验证、准备、解析、初始化
+- 加载
+- 验证
+- 准备
+- 解析
+- 初始化
 
 ## 类初始化时机
 
 ## 类与类加载器
-- loadClass和forName的区别
-    - 类的加载方式
-        - 隐式加载：new
-        - 显式加载：loadClass、forName
-    - loadClass和forName的区别
-        - forName会进行类的初始化
-    ```
-    ClassLoader cl = Robot.class.getClassLoader();
-    Class r = Class.forName("com.imooc.interview.reflect.Robot");
-    ```
+
 
 ## 类加载器分类
-    - Class Loader种类：
-        - BootStrapClassLoader
-        - ExtClassLoader
-        - AppClassLoader
-        - CustomClassLoader
+
 ## 双亲委派模型
-- 双亲委派机制
-    - 定义：在加载一个类时，先将这个类交给父级加载器加载，如果父级加载器无法加载，再由自己加载
-        - 作用：避免多份同样字节码加载
-    - native：本地库或非Java代码
 
 ## 自定义类加载器实现
