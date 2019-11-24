@@ -13,7 +13,6 @@ description: 运行时数据区域：程序计数器、Java虚拟机栈、本地
 # 一、运行时数据区域
 - Java虚拟机由四部分组成：Class Loader(类加载器)、Execution Engine(执行引擎)、Native Interface(本地接口)、Runtime Data Area(运行时数据区域)
 - 运行时数据区域：JVM在执行Java程序的过程中会把它所管理的内存划分为若干个不同的数据区域
-    - JDK1.8 JVM运行时数据区域概览：
     ![](/images/java/jvm/1.png)
 
 ## 程序计数器
