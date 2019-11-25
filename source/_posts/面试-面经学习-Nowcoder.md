@@ -1,8 +1,9 @@
 ---
 title: 面试：面经学习-Nowcoder
 date: 2019-11-20 21:40:43
+categories: 面经
 tags: 
-- 阿里
+- 面经
 description: 算法、Java、基础、项目
 ---
 
@@ -19,7 +20,9 @@ description: 算法、Java、基础、项目
 ### Java基础
 - 面向对象
     - 访问权限控制：public > protected > 默认（包访问权限）> private
+
 ### Java容器
+
 ### Java虚拟机
 - 分代回收算法
     - 11.20：[阿里一面感受【补面经】](https://www.nowcoder.com/discuss/113050)
