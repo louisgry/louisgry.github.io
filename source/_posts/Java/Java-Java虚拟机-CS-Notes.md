@@ -1,6 +1,6 @@
 ---
 title: Java：Java虚拟机-CS-Notes
-date: 2019-11-25 19:32:04
+date: 2019-11-26 16:24:04
 categories: Java
 tags: 
 - Ebbinghaus
@@ -494,12 +494,12 @@ public class FileSystemClassLoader extends ClassLoader {
 
 ## 虚拟机性能监控与故障处理工具
 ### 1. JDK的命令行工具
-- `jps`: 虚拟机进程状态工具，用于查看所有Java进程
-- `jstat`: 虚拟机统计信息监视工具，用于监视虚拟机各种运行状态信息
-- `jinfo`: Java配置信息工具，用于实时地查看和调整虚拟机各项参数
-- `jmap`: Java内存映像工具，用于生成堆转储快照
+- `jps`: 虚拟机进程状态工具，显示指定系统内所有的HotSpot虚拟机进程
+- `jstat`: 虚拟机统计信息监视工具，用于收集HotSpot虚拟机各方面的允许数据
+- `jinfo`: Java配置信息工具，显示虚拟机配置信息
+- `jmap`: Java内存映像工具，生成虚拟机的内存转储快照（heapdump文件）
 - `jhat`: 虚拟机堆转储快照分析工具，用于分析heapdump文件
-- `jstack`: Java堆栈跟踪工具，用于生成虚拟机当前时刻的线程快照
+- `jstack`: Java堆栈跟踪工具，显示虚拟机的线程快照
 
 ### 2. JDK的可视化工具
 - JConsole: Java监视与管理控制台
@@ -507,7 +507,7 @@ public class FileSystemClassLoader extends ClassLoader {
 
 ## Java虚拟机的相关问题
 ### JVM如何加载.class文件？
-- JVM由四部分组成，JVM主要通过Class Loader把符合格式要求的.class文件加载到内存中，再通过Execution Engine解析文件里的字节码，并提交给操作系统去执行
+- JVM由四部分组成，JVM主要通过ClassLoader把符合格式要求的.class文件加载到内存中，再通过Execution Engine解析文件里的字节码，并提交给操作系统去执行
 
 ### loadClass()和forName()的区别？
 - 类的加载方式
