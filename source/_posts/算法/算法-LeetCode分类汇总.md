@@ -7,7 +7,6 @@ tags:
 - LeetCode
 description: 数据结构（栈、队列、链表、二叉树）、算法思想（游标、Partition、双指针、滑动窗口、动态规划、贪心、回溯）
 ---
-<!-- more -->
 
 # 数据结构
 ## stack

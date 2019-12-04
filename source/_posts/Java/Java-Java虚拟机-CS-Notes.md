@@ -5,7 +5,7 @@ categories: Java
 tags: 
 - Ebbinghaus
 - Java虚拟机
-description: 一、运行时数据区域：1. 程序计数器、2. Java虚拟机栈、3. 本地方法栈、4. Java堆、5. 方法区、6. 运行时常量池、7. 直接内存<br>二、垃圾收集：1. 判断一个对象是否可被回收、2. 引用类型、3. 垃圾收集算法、4. 垃圾收集器<br>三、内存分配与回收策略：1. Minor GC 和 Full GC、2. 内存分配策略、3. Full GC的触发条件<br>四、类加载机制：1. 类的生命周期、2. 类加载的过程、3. 类初始化时机、4. 类加载器<br>五、Java虚拟机的其他知识：1. JVM组成结构、2. 反射、3. 虚拟机性能监控与故障处理工具、4. Java虚拟机的相关问题
+description: 一、运行时数据区域：1. 程序计数器、2. Java虚拟机栈、3. 本地方法栈、4. Java堆、5. 方法区、6. 运行时常量池、7. 直接内存<br>二、垃圾收集：1. 判断一个对象是否可被回收、2. 引用类型、3. 垃圾收集算法、4. 垃圾收集器<br>三、内存分配与回收策略：1. Minor GC 和 Full GC、2. 内存分配策略、3. Full GC的触发条件<br>四、类加载机制：1. 类的生命周期、2. 类加载的过程、3. 类初始化时机、4. 类加载器<br>五、Java虚拟机的其他知识：1. JVM组成结构、2. 虚拟机性能监控与故障处理工具、3. Java虚拟机的相关问题
 ---
 > 《深入理解Java虚拟机》
 
@@ -468,29 +468,6 @@ public class FileSystemClassLoader extends ClassLoader {
     - Execution Engine(执行引擎)：对命令进行解析
     - Native Interface(本地接口)：融合不同语言的原生库为Java所用
     - Runtime Data Area(运行时数据区域)：JVM内存结构
-
-## 反射
-- 反射：**将Java类中的全部成份映射为一个个Java对象**
-    - 面试问反射 -> 背反射的概念（没用） -> 写一个反射的例子（应在理解后记忆）
-    ```java
-    Class rc = Class.forName("com.imooc.interview.reflect.Robot");
-    Robot r = (Robot) rc.newInstance();
-    System.out.println("Class name: " + rc.getName());
-    r.sayHi("hello Reflect");
-
-    Method getHello = rc.getDeclaredMethod("throwHello", String.class);
-    getHello.setAccessible(true);
-    Object str = getHello.invoke(r, "Bob");
-    System.out.println("getHello: " + str);
-
-    Method sayHi = rc.getMethod("sayHi", String.class);
-    sayHi.invoke(r, "welcome");
-
-    Field name = rc.getDeclaredField("name");
-    name.setAccessible(true);
-    name.set(r, "Alice");
-    sayHi.invoke(r, "welcome");
-    ```
 
 ## 虚拟机性能监控与故障处理工具
 ### 1. JDK的命令行工具
