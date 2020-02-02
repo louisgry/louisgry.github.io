@@ -1,10 +1,10 @@
 ---
 title: MySQL数据库架构-imooc
-date: 2019-12-05 20:32:46
+date: 2019-12-14 20:32:46
 categories: 数据库
 tags: 
 - MySQL
-description: 实例和故事
+description: 二、MySQL数据库架构（实例和故事）
 ---
 
     

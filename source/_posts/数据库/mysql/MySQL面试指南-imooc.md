@@ -1,10 +1,10 @@
 ---
 title: MySQL面试指南-imooc
-date: 2019-12-12 20:32:46
+date: 2019-12-22 20:32:46
 categories: 数据库
 tags: 
 - MySQL
-description: 版本、用户管理、服务器配置、日志、存储引擎、架构、备份恢复、管理监控、异常处理
+description: 四、MySQL面试指南（版本、用户管理、服务器配置、日志、存储引擎、架构、备份恢复、管理监控、异常处理）
 ---
 
 ## 四、MySQL面试指南

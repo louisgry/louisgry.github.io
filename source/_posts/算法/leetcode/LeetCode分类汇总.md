@@ -1,5 +1,5 @@
 ---
-title: 【LeetCode分类汇总】
+title: LeetCode分类汇总
 date: 2019-10-31 14:26:51
 categories: 算法
 tags: 

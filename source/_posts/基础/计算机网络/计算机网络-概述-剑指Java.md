@@ -1,7 +1,7 @@
 ---
 title: "计算机网络：概述-剑指Java"
 date: 2019-10-13 11:56:35
-categories: 计算机网络
+categories: 基础
 tags: 
 - Ebbinghaus
 - 计网

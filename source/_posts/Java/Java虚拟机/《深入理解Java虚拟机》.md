@@ -1,5 +1,5 @@
 ---
-title: 【《深入理解Java虚拟机》】
+title: 《深入理解Java虚拟机》
 date: 2019-11-26 16:24:04
 categories: Java
 tags: 

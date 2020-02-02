@@ -1,5 +1,5 @@
 ---
-title: 《深入理解Java虚拟机》三、内存分配与回收策略-CS-Notes
+title: 《深入理解Java虚拟机》三、内存分配与回收策略
 date: 2019-11-22 16:24:04
 categories: Java
 tags: 

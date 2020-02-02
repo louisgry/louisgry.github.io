@@ -1,10 +1,10 @@
 ---
 title: MySQL8.0详解与实战-imooc
-date: 2019-12-01 20:32:46
+date: 2019-12-07 20:32:46
 categories: 数据库
 tags: 
 - MySQL
-description: 数据库选型、数据库设计、数据库访问、SQL开发、SQL优化、事务和高并发
+description: 一、MySQL8.0详解与实战（数据库选型、数据库设计、数据库访问、SQL开发、SQL优化、事务和高并发）
 ---
 
 ## 一、MySQL8.0详解与实战

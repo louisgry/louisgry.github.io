@@ -1,5 +1,5 @@
 ---
-title: 《深入理解Java虚拟机》二、垃圾收集-CS-Notes
+title: 《深入理解Java虚拟机》二、垃圾收集
 date: 2019-11-20 16:24:04
 categories: Java
 tags: 
