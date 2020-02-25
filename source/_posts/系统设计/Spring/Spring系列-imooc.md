@@ -1,10 +1,10 @@
 ---
 title: Spring系列-imooc
 date: 2019-08-18 15:41:34
-categories: Java
+categories: 系统设计
 tags: 
 - Spring
-description: SpringBoot、Spring Data
+description: Spring Boot、Spring Data
 ---
 
 ## SpringBoot入门

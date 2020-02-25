@@ -4,7 +4,7 @@ date: 2019-12-14 20:32:46
 categories: 数据库
 tags: 
 - MySQL
-description: 二、MySQL数据库架构（实例和故事）
+description: 二、MySQL数据库架构（实例和故事、MySQL性能、基准测试、结构优化、架构设计、索引优化、SQL查询优化、分库分表、监控）
 ---
 
     
@@ -46,3 +46,18 @@ description: 二、MySQL数据库架构（实例和故事）
         - 避免一次处理太多的数据（如一次处理1000个用户）
         - 移除不必要在事务中的SELECT操作
 
+### Ch2-什么影响了MySQL性能
+
+### Ch3-MySQL基准测试
+
+### Ch4-MySQL数据库结构优化
+
+### Ch5-MySQL高可用架构设计
+
+### Ch6-数据库索引优化
+
+### Ch7-SQL查询优化
+
+### Ch8-数据库的分库分表
+
+### Ch9-数据库监控
