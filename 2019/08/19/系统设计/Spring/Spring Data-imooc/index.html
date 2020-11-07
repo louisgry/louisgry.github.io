@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: './public/search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="使用传统方式访问数据库、Spring Data入门与进阶">
+<meta name="keywords" content="Spring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Data-imooc">
+<meta property="og:url" content="https:&#x2F;&#x2F;louisgry.github.io&#x2F;2019&#x2F;08&#x2F;19&#x2F;%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&#x2F;Spring&#x2F;Spring%20Data-imooc&#x2F;index.html">
+<meta property="og:site_name" content="Louis&#39; Blog">
+<meta property="og:description" content="使用传统方式访问数据库、Spring Data入门与进阶">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-03-01T12:08:22.906Z">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://louisgry.github.io/2019/08/19/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/Spring/Spring%20Data-imooc/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Spring Data-imooc | Louis' Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Louis' Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+        
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+      
+    
+      
+      
+        
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      
+    
+      
+      
+        
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+      
+    
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://louisgry.github.io/2019/08/19/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/Spring/Spring%20Data-imooc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Louis">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Louis' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            Spring Data-imooc
+            
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-08-19 15:41:34" itemprop="dateCreated datePublished" datetime="2019-08-19T15:41:34+08:00">2019-08-19</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-03-01 20:08:22" itemprop="dateModified" datetime="2020-03-01T20:08:22+08:00">2020-03-01</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" itemprop="url" rel="index">
+                    <span itemprop="name">系统设计</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <div class="post-description">使用传统方式访问数据库、Spring Data入门与进阶</div>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="轻松愉快之玩转SpringData"><a href="#轻松愉快之玩转SpringData" class="headerlink" title="轻松愉快之玩转SpringData"></a>轻松愉快之玩转SpringData</h2><p><a href="https://github.com/louisgry/Programming/tree/master/Spring/springdata" target="_blank" rel="noopener">https://github.com/louisgry/Programming/tree/master/Spring/springdata</a></p>
+<ul>
+<li>Ch1：课程介绍<ul>
+<li>Spring Data：简化数据库的访问方式</li>
+<li>包含多个子项目：Spring Data JPA、MongoDB、Redis、Solr</li>
+</ul>
+</li>
+<li>Ch2：使用传统方式访问数据库<ul>
+<li>学习新技术之前，先学习为什么要用这个技术</li>
+<li>传统方式：JDBC、Spring JdbcTemplate</li>
+<li>JDBC：<code>Connection、Statement、ResultSet</code>、Test Case（单元测试）</li>
+<li>Maven：GAV（GroupId、ArtifactId、Version）</li>
+<li>使用JDBC<ol>
+<li>新建Maven项目，配置db.properties</li>
+<li>创建数据库和表（spring_data库：student表）</li>
+<li>开发JDBCUtil工具类：util下编写JDBCUtil类</li>
+<li>建立对象模型和DAO层开发：StudentDAO、StudentDAOImpl</li>
+</ol>
+</li>
+<li>使用Spring JdbcTemplate<ol>
+<li>Maven依赖</li>
+<li>配置beans.xml（DataSource &amp; JdbcTemplate注入）</li>
+<li>编写接口实现类StudentDAOSpringJdbcImpl</li>
+<li>Test Case：DataSourceTest、StudentDAOSpringJdbcImplTest</li>
+</ol>
+</li>
+<li>弊端分析<ul>
+<li>DAO很多代码</li>
+<li>DAOImpl很多重复代码</li>
+<li>开发分页功能还需重新封装</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Ch3：Spring Data快速入门<ul>
+<li>使用Spring Data<ol>
+<li>Maven依赖（spring-data-jpa、hibernate-entitymanager）</li>
+<li>配置beans-new.xml（一共5个步骤）</li>
+<li>domain中添加Employee实体类</li>
+<li>编写SpringDataTest测试类（testEntityManagerFactory方法）</li>
+<li>repository中添加EmployeeRepository接口</li>
+<li>编写EmployeeRepositoryTest测试类（testFindByName方法）</li>
+</ol>
+</li>
+<li>Spring Data优点<ul>
+<li>只需要写Interface，不用写实现类（findByName）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Ch4：Spring Data JPA进阶<ul>
+<li>Repository接口讲解<ul>
+<li>Repository接口（标记接口，里面是空的）是Spring Data的核心接口，不提供任何方法</li>
+<li>1.继承：<code>public interface Repository&lt;T, ID extends Serializable&gt;{}</code></li>
+<li>2.注解：<code>@RepositoryDefinition(domainClass=Employee.class, idClass=Integer.class)</code></li>
+</ul>
+</li>
+<li>Repository子接口<ul>
+<li>CrudRepository</li>
+<li>PageAndSortingRepository</li>
+<li>JpaRepository</li>
+</ul>
+</li>
+<li>Repository查询方法定义规则和使用<ul>
+<li>命名规则：findByNameInOrAgeLessThan</li>
+</ul>
+</li>
+<li>Query注解<ul>
+<li>方式一：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Query</span>(<span class="string">"select o from Employee o where o.name=?1 and o.age=?2"</span>)</span><br></pre></td></tr></table></figure></li>
+<li>方式二：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Query</span>(<span class="string">"select o from Employee o where o.name=:name and o.age=:age"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Employee&gt; <span class="title">queryParams2</span><span class="params">(@Param(<span class="string">"name"</span>)</span>String name, @<span class="title">Param</span><span class="params">(<span class="string">"age"</span>)</span>Integer age)</span>;</span><br></pre></td></tr></table></figure></li>
+<li>方式三：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Query</span>(nativeQuery = <span class="keyword">true</span>, value = <span class="string">"select count(1) from employee"</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>更新操作整合事务使用<ul>
+<li><code>@Modifying</code>注解</li>
+<li>事务一般是在Service层</li>
+<li><code>@Transactional</code>添加事务</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Ch5：Spring Data JPA高级<ul>
+<li>CrudRepository<ul>
+<li>repository下新建EmployeeCrudRepository接口</li>
+<li>service下编写save方法</li>
+<li>test下测试save方法 </li>
+</ul>
+</li>
+<li>PageAndSortingRepository<ul>
+<li>repository下新建EmployeePageAndSortingRepository接口</li>
+<li>test下测试testPage方法 </li>
+<li>test下测试testPageAndSort方法 </li>
+</ul>
+</li>
+<li>JpaRepository<ul>
+<li>repository下新建EmployeeJpaRepositoryRepository接口</li>
+<li>test下测试testFindOne方法 </li>
+</ul>
+</li>
+<li>JpaSpecificationExecutor<ul>
+<li>repository下新建EmployeeJpaSpecificationExecutorRepository接口（继承JpaRepository和JpaSpecificationExecutor）</li>
+<li>test下测试testQuery方法（age&gt;50，id降序，分页） </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Ch6：课程总结<ul>
+<li>SpringData支持关系型和非关系型数据库</li>
+<li>传统方式访问数据库</li>
+<li>Spring Data入门及高阶</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Spring/" rel="tag"># Spring</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/08/15/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/Spring/Spring%20Boot-imooc/" rel="next" title="Spring Boot-imooc">
+                  <i class="fa fa-chevron-left"></i> Spring Boot-imooc
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/09/22/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-imooc/" rel="prev" title="数据结构与算法-imooc">
+                  数据结构与算法-imooc <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#轻松愉快之玩转SpringData"><span class="nav-number">1.</span> <span class="nav-text">轻松愉快之玩转SpringData</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Louis</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Louis</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">
+      
+    Theme – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.1
+  </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/muse.js?v=7.4.1"></script>
+
+<script src="/js/next-boot.js?v=7.4.1"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

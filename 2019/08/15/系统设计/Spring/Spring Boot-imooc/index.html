@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: './public/search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Spring Boot入门、进阶、Spring Boot 2.0">
+<meta name="keywords" content="Spring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Boot-imooc">
+<meta property="og:url" content="https:&#x2F;&#x2F;louisgry.github.io&#x2F;2019&#x2F;08&#x2F;15&#x2F;%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&#x2F;Spring&#x2F;Spring%20Boot-imooc&#x2F;index.html">
+<meta property="og:site_name" content="Louis&#39; Blog">
+<meta property="og:description" content="Spring Boot入门、进阶、Spring Boot 2.0">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-03-01T12:08:28.123Z">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://louisgry.github.io/2019/08/15/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/Spring/Spring%20Boot-imooc/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Spring Boot-imooc | Louis' Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Louis' Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+        
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+      
+    
+      
+      
+        
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      
+    
+      
+      
+        
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+      
+    
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://louisgry.github.io/2019/08/15/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/Spring/Spring%20Boot-imooc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Louis">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Louis' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            Spring Boot-imooc
+            
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-08-15 15:41:34" itemprop="dateCreated datePublished" datetime="2019-08-15T15:41:34+08:00">2019-08-15</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-03-01 20:08:28" itemprop="dateModified" datetime="2020-03-01T20:08:28+08:00">2020-03-01</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" itemprop="url" rel="index">
+                    <span itemprop="name">系统设计</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <div class="post-description">Spring Boot入门、进阶、Spring Boot 2.0</div>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="SpringBoot入门"><a href="#SpringBoot入门" class="headerlink" title="SpringBoot入门"></a>SpringBoot入门</h2><p><a href="https://github.com/louisgry/Programming/tree/master/Spring/springboot" target="_blank" rel="noopener">https://github.com/louisgry/Programming/tree/master/Spring/springboot</a></p>
+<ul>
+<li>Ch1：课程引导<ul>
+<li>Spring Boot：编码、配置、部署、监控（作基础架构）<ul>
+<li>1.化繁为简、简化配置</li>
+<li>2.是下一代框架</li>
+</ul>
+</li>
+<li>SpringBoot是SpringMVC的升级版</li>
+<li>微服务：SpringCloud是基于SpringBoot构建的</li>
+</ul>
+</li>
+<li>Ch3：第一个Spring Boot应用<ul>
+<li><code>Spring Boot 2.1.3</code>：sping-boot-starter-web</li>
+<li>localhost:8080/hello</li>
+<li>本地使用maven运行服务<ul>
+<li>方法一：项目目录下，<code>mvn spring-boot:run</code></li>
+<li>方法二：先项目打包<code>mvn clean package</code>，然后启动java程序<code>java -jar target/springboot-0.0.1-SNAPSHOT.jar</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Ch4：项目属性配置<ul>
+<li>配置推荐使用application.yml<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">  port: 8081</span><br><span class="line">  servlet:</span><br><span class="line">    context-path: /springboot</span><br></pre></td></tr></table></figure></li>
+<li>配置变量<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">minMoney: 1</span><br><span class="line">description: &quot;最小金额$&#123;minMoney&#125;元&quot;</span><br></pre></td></tr></table></figure></li>
+<li>注解使用<ul>
+<li><code>@Value</code></li>
+<li><code>@Component、@ConfigurationProperties</code></li>
+</ul>
+</li>
+<li>使用对象配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">limit:</span><br><span class="line">  minMoney: 2</span><br><span class="line">  description: &quot;最小金额$&#123;limit.minMoney&#125;元&quot;</span><br></pre></td></tr></table></figure></li>
+<li>多环境配置：划分配置为开发dev、生产pro<ul>
+<li>application-dev.yml、application-pro.yml</li>
+<li>application.yml中配置使用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  profiles:</span><br><span class="line">    active: dev</span><br></pre></td></tr></table></figure></li>
+<li>项目发布使用pro：<code>java -jar -Dspring.profiles.active=pro target/springboot-0.0.1-SNAPSHOT.jar</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Ch5：Controller<ul>
+<li><code>@Controller</code>：处理http请求<ul>
+<li>返回数据需要使用模板：<code>spring-boot-starter-thymeleaf</code></li>
+</ul>
+</li>
+<li><code>@RestController</code>：Spring4之前返回原来json需要@ResponseBody配合@Controller<ul>
+<li><code>@GetMapping</code>：返回json</li>
+<li><code>ctrl+p</code>：显示提示</li>
+<li><code>@PostMapping</code>：使用POST请求</li>
+<li>需要使用工具：PostMan    </li>
+</ul>
+</li>
+<li><code>@RequestMapping</code>：配置url映射<ul>
+<li><code>@RequestMapping</code>：既支持GET又支持POST（不推荐）</li>
+<li><code>@PathVariable</code>：say/100 （@GetMapping(“/say/{id}”)）</li>
+<li><code>@RequestParam</code>：say/?id=100<ul>
+<li>PostMan通过Body传参：<code>x-www-form-urlencoded</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Ch6：数据库操作<ul>
+<li>JPA（Java Persistence API）：对象持久化标准，Hibernate实现<ul>
+<li>配置文件application.yml：注意<code>username、url、serverTimezone、MySQL5Dialect</code></li>
+</ul>
+</li>
+<li>RESTful API设计<ul>
+<li>GET  /luckymoneys/list 获取红包列表</li>
+<li>POST /luckymoneys/send 创建一个红包（发红包）</li>
+<li>GET  /luckymoneys/find 通过id查询红包</li>
+<li>POST  /luckymoneys/receive  通过id更新红包（领红包）</li>
+</ul>
+</li>
+<li>dataobject<ul>
+<li>Luckymoney类：<code>@Entity</code></li>
+</ul>
+</li>
+<li>repository<ul>
+<li>LuckymoneyRepository接口：<code>extends JpaRepository&lt;Luckymoney, Integer&gt;</code></li>
+</ul>
+</li>
+<li>controller<ul>
+<li>LuckymoneyController类</li>
+<li><code>@RestController</code>：开发REST服务</li>
+<li><code>@Autowired</code>：自动装配</li>
+<li><code>@GetMapping</code>：返回json</li>
+<li>error：found Optional（后面加<code>.orElse(null)</code>）<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Optional&lt;Luckymoney&gt; optional = luckymoneyRepository.findById(id);</span><br><span class="line">    <span class="keyword">if</span>(optional.isPresent())&#123;</span><br><span class="line">        Luckymoney luckymoney = optional.get();</span><br><span class="line">        luckymoney.setId(id);</span><br><span class="line">        luckymoney.setConsumer(consumer);</span><br><span class="line">        <span class="keyword">return</span> luckymoneyRepository.save(luckymoney);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>url：<code>yml里的端口+context-path+RequestMapping+GetMapping路径</code> </li>
+<li>hibernate_sequence：用来存id，管理数据库的</li>
+</ul>
+</li>
+<li>Ch7：事务<ul>
+<li>service<ul>
+<li>LuckymoneyService类：<code>@Service</code></li>
+<li>事务：<code>@Transacational</code> （只有都成功才会插入到数据库中）</li>
+<li>MySQL只有InnoDB引擎支持事务</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="SpringBoot进阶"><a href="#SpringBoot进阶" class="headerlink" title="SpringBoot进阶"></a>SpringBoot进阶</h2><p><a href="https://github.com/louisgry/Programming/tree/master/Spring/springboot" target="_blank" rel="noopener">https://github.com/louisgry/Programming/tree/master/Spring/springboot</a></p>
+<ul>
+<li>Ch1：课程介绍<ul>
+<li>Web进阶<ol>
+<li><code>@Valid</code>表单验证</li>
+<li>AOP处理请求</li>
+<li>统一异常处理</li>
+<li>单元测试</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Ch2：表单验证<ul>
+<li>Girl对象： <code>@min</code><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Min</span>(value = <span class="number">18</span>, message = <span class="string">"未成年少女禁止进入"</span>)</span><br><span class="line"><span class="keyword">private</span> Integer age;</span><br></pre></td></tr></table></figure></li>
+<li>GirlController：<code>@Valid</code>、传对象Girl girl<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Girl <span class="title">girlAdd</span><span class="params">(@Valid Girl girl, BindingResult bindingResult)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(bindingResult.hasErrors())&#123;</span><br><span class="line">        System.out.println(bindingResult.getFieldError().getDefaultMessage());&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>Ch2：AOP处理请求<ul>
+<li>AOP是一种编程范式<ul>
+<li>与语言无关，是一种编程思想，还有OOP和面向过程</li>
+<li>不只是Java有，还有C#等也有AOP</li>
+<li>切面：相同的功能封装成为一个通用的模块（将通用逻辑从业务中分离出来）</li>
+<li>spring不会初始化controller的构造方法</li>
+</ul>
+</li>
+<li>aspect<ul>
+<li>添加依赖<code>spring-boot-starter-aop</code></li>
+<li>新建HttpAspect类：<code>@Aspect</code>、<code>@Component</code><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Pointcut</span>(<span class="string">"execution(public * com.imooc.springboot.controller.GirlController.*(..))"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">log</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Before</span>(<span class="string">"log()"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doBefore</span><span class="params">(JoinPoint joinPoint)</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Ch2：日志框架<ul>
+<li><code>org.slf4j.Logger</code><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> Logger logger = LoggerFactory.getLogger(HttpAspect.class);</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>Ch2：统一异常处理<ul>
+<li>exception<ul>
+<li>新建GirlException类：<code>extends RuntimeException</code>（Spring只对RuntimeException作事务回滚）</li>
+</ul>
+</li>
+<li>handle<ul>
+<li>新建ExceptionHandle类：<code>@ControllerAdvice</code>、<code>@ExceptionHandler</code>、<code>@ResponseBody</code></li>
+</ul>
+</li>
+<li>enums<ul>
+<li>ResultEnum枚举类：构造方法和Getter方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Ch3：单元测试<ul>
+<li>对controller做单元测试：<code>@AutoConfigureMockMvc</code><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> MockMvc mockMvc;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">girlList</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    <span class="comment">// 测试status</span></span><br><span class="line">    mockMvc.perform(MockMvcRequestBuilders.get(<span class="string">"/girls"</span>))</span><br><span class="line">            .andExpect(MockMvcResultMatchers.status().isOk());</span><br><span class="line">    <span class="comment">//测试content</span></span><br><span class="line">    mockMvc.perform(MockMvcRequestBuilders.get(<span class="string">"/girls"</span>))</span><br><span class="line">            .andExpect(MockMvcResultMatchers.content().string(<span class="string">"abc"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>Maven打包时跳过单元测试：<code>mvc clean package -Dmaven.test.skip=true</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="SpringBoot2-0"><a href="#SpringBoot2-0" class="headerlink" title="SpringBoot2.0"></a>SpringBoot2.0</h2><ul>
+<li>Ch1：<ul>
+<li>Spring Boot 2.0 新特性<ul>
+<li>编程语言：Java8+、Kotlin</li>
+<li>底层框架：Spring Framework  5.0x</li>
+<li>全新特性：Web Flux</li>
+</ul>
+</li>
+<li>Web Flux<ul>
+<li>函数式编程：Java 8 Lambda</li>
+<li>响应式编程：Reactive Streams</li>
+<li>异步编程：Servlet 3.1或Asyc NIO</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Ch2：Spring Boot 项目<ul>
+<li>场景说明<ul>
+<li>定义用户模型，属性：用户Id、名称</li>
+<li>客户端发送POST请求，创建用户（Web MVC）</li>
+<li>客户端发送GET请求，获取所有用户（Web Flux）</li>
+</ul>
+</li>
+<li>Web Flux<ul>
+<li>项目：<code>Reactive Web</code></li>
+<li>依赖：<code>spring-boot-starter-webflux</code></li>
+<li>Console：PID、Netty、RequestMappingHandlerMapping</li>
+</ul>
+</li>
+<li>domian<ul>
+<li>新建User类</li>
+<li><code>int id;</code></li>
+<li><code>String name;</code></li>
+<li><code>toString()</code></li>
+</ul>
+</li>
+<li>repository<ul>
+<li>UserRepository</li>
+<li><code>@Repository</code><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 采用内存型的存储方式 -&gt; Map</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> ConcurrentMap&lt;Integer, User&gt; repository = <span class="keyword">new</span> ConcurrentHashMap&lt;&gt;();</span><br><span class="line"><span class="comment">// Id 自增长</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> AtomicInteger idGenerator = <span class="keyword">new</span> AtomicInteger();</span><br><span class="line"><span class="comment">// 保存用户对象</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">save</span><span class="params">(User user)</span></span>&#123;</span><br><span class="line">    Integer id = idGenerator.incrementAndGet(); <span class="comment">// 从1开始</span></span><br><span class="line">    user.setId(id);</span><br><span class="line">    <span class="keyword">return</span> repository.put(id, user) == <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>controller<ul>
+<li>新建UserController：<code>@RestController</code><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> UserRepository userRepository;</span><br><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">UserController</span><span class="params">(UserRepository userRepository)</span></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.userRepository = userRepository;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@PostMapping</span>(<span class="string">"/person/save"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> User <span class="title">save</span><span class="params">(@RequestParam String name)</span></span>&#123;</span><br><span class="line">    User user = <span class="keyword">new</span> User();</span><br><span class="line">    user.setName(name);</span><br><span class="line">    <span class="keyword">if</span>(userRepository.save(user))&#123;</span><br><span class="line">        <span class="comment">// 格式化输出System.out.printf</span></span><br><span class="line">        System.out.printf(<span class="string">"用户对象：%s 保存成功！\n"</span>, user);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> user;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Ch2：Web Flux<ul>
+<li>Reactive<ul>
+<li>Reactor是异步NIO，是Reactive的一种实现</li>
+</ul>
+</li>
+<li>两个概念<ul>
+<li>Flux：0-N个对象集合</li>
+<li>Mono：0-1个对象集合，类似Optional避免对象为空（但是flux和mono异步处理）</li>
+<li>Flux和Mono都是Publisher</li>
+</ul>
+</li>
+<li>config<ul>
+<li>新建RouterFunctionConfiguratioin：<code>@Configuration</code></li>
+<li>RouterFunction、ServerResponse</li>
+<li>Servlet<ul>
+<li>请求接口：ServletRequest 或 HttpServletRequest</li>
+<li>响应接口：ServletResponse 或 HttpServletResponse</li>
+</ul>
+</li>
+<li>Spring 5.0 重新定义了接口<ul>
+<li>请求接口：ServerRequest</li>
+<li>响应接口：ServerResponse</li>
+<li>即可支持Servlet规范，也支持自定义规范：如Netty Web Server</li>
+</ul>
+</li>
+<li>注入方式<ul>
+<li>setter注入</li>
+<li>注解注入</li>
+<li>构造器注入<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> RouterFunction&lt;ServerResponse&gt; <span class="title">personFindAll</span><span class="params">(UserRepository userRepository)</span></span>&#123;</span><br><span class="line">    Collection&lt;User&gt; users = userRepository.findAll();</span><br><span class="line">    <span class="keyword">return</span> RouterFunctions.route(RequestPredicates.GET(<span class="string">"/persion/list-webflux"</span>),</span><br><span class="line">            request -&gt; &#123;</span><br><span class="line">                <span class="comment">// 返回所有的用户对象</span></span><br><span class="line">                Mono&lt;ServerResponse&gt; responseMono = <span class="keyword">null</span>;</span><br><span class="line">                Flux&lt;User&gt; userFlux = Flux.fromIterable(users);</span><br><span class="line">                <span class="keyword">return</span> ServerResponse.ok().body(userFlux, User.class);</span><br><span class="line">            &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Ch3：多模块<ul>
+<li>项目下新建module</li>
+<li>子模块的pom的<code>parent</code>修改为父模块的<ul>
+<li>模型层：model（domain：User）</li>
+<li>持久层：persistence（repository：UserRepository）</li>
+<li>表示层：view（controller：UserController）</li>
+</ul>
+</li>
+<li>依赖关系：web -&gt; persistence -&gt; model</li>
+</ul>
+</li>
+<li>Ch4：Spring Boot三大特性<ul>
+<li>自动装配</li>
+<li>嵌入式容器</li>
+<li>DevOps</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Spring/" rel="tag"># Spring</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/06/14/Java/Java%E5%85%A5%E9%97%A8/Java%E5%85%A5%E9%97%A8%E7%AC%AC%E4%B8%89%E5%AD%A3-imooc/" rel="next" title="Java入门第三季-imooc">
+                  <i class="fa fa-chevron-left"></i> Java入门第三季-imooc
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/08/19/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/Spring/Spring%20Data-imooc/" rel="prev" title="Spring Data-imooc">
+                  Spring Data-imooc <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringBoot入门"><span class="nav-number">1.</span> <span class="nav-text">SpringBoot入门</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringBoot进阶"><span class="nav-number">2.</span> <span class="nav-text">SpringBoot进阶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringBoot2-0"><span class="nav-number">3.</span> <span class="nav-text">SpringBoot2.0</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Louis</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Louis</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">
+      
+    Theme – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.1
+  </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/muse.js?v=7.4.1"></script>
+
+<script src="/js/next-boot.js?v=7.4.1"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

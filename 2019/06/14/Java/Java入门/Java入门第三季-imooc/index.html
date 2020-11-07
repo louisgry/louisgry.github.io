@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: './public/search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="异常、常用类、集合框架">
+<meta name="keywords" content="Java基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java入门第三季-imooc">
+<meta property="og:url" content="https:&#x2F;&#x2F;louisgry.github.io&#x2F;2019&#x2F;06&#x2F;14&#x2F;Java&#x2F;Java%E5%85%A5%E9%97%A8&#x2F;Java%E5%85%A5%E9%97%A8%E7%AC%AC%E4%B8%89%E5%AD%A3-imooc&#x2F;index.html">
+<meta property="og:site_name" content="Louis&#39; Blog">
+<meta property="og:description" content="异常、常用类、集合框架">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-02-02T13:24:24.452Z">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://louisgry.github.io/2019/06/14/Java/Java%E5%85%A5%E9%97%A8/Java%E5%85%A5%E9%97%A8%E7%AC%AC%E4%B8%89%E5%AD%A3-imooc/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Java入门第三季-imooc | Louis' Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Louis' Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+        
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+      
+    
+      
+      
+        
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      
+    
+      
+      
+        
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+      
+    
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://louisgry.github.io/2019/06/14/Java/Java%E5%85%A5%E9%97%A8/Java%E5%85%A5%E9%97%A8%E7%AC%AC%E4%B8%89%E5%AD%A3-imooc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Louis">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Louis' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            Java入门第三季-imooc
+            
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-06-14 00:03:32" itemprop="dateCreated datePublished" datetime="2019-06-14T00:03:32+08:00">2019-06-14</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-02 21:24:24" itemprop="dateModified" datetime="2020-02-02T21:24:24+08:00">2020-02-02</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <div class="post-description">异常、常用类、集合框架</div>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><ul>
+<li>概念<ul>
+<li>Throwable是父类，下有Error和Exception两个子类</li>
+<li>Error：VirtualMachineError（虚拟机错误），ThreadDeath（线程死锁）</li>
+<li>Exception：RuntimeException（非检查异常），CheckedException 检查异常<ul>
+<li>非检查异常：NullPointerException, ArrayIndexOutOfBoundsException, ClassCatException, ArithmeticException</li>
+<li>检查异常：IOException, SQLException</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>异常处理<ul>
+<li><code>try...catch</code><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"输入年龄："</span>);</span><br><span class="line">    Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">    <span class="keyword">int</span> age = in.nextInt();</span><br><span class="line">    System.out.println(age);</span><br><span class="line">&#125;<span class="keyword">catch</span>(InputMismatchException e)&#123;</span><br><span class="line">    System.out.println(<span class="string">"请输入整数！"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>多重catch块（先子类后父类）及<code>try...catch...finally</code><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">    <span class="keyword">int</span> one = in.nextInt();</span><br><span class="line">    <span class="keyword">int</span> two = in.nextInt();</span><br><span class="line">    System.out.println(one/two);</span><br><span class="line">&#125;<span class="keyword">catch</span>(InputMismatchException e)&#123;</span><br><span class="line">    System.out.println(<span class="string">"请输入整数！"</span>);</span><br><span class="line">&#125;<span class="keyword">catch</span>(ArithmeticException e)&#123;</span><br><span class="line">    System.out.println(<span class="string">"除数不能为零！"</span>);</span><br><span class="line">&#125;<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">    System.out.println(<span class="string">"程序发生异常！"</span>);</span><br><span class="line">&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"finally执行！"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>异常抛出<ul>
+<li>throw关键字：throws声明将要抛出何种类型的异常，throw抛出异常<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">compute</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">    System.out.println(<span class="number">5</span>/<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">compute2</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        System.out.println(<span class="number">5</span>/<span class="number">0</span>);</span><br><span class="line">    &#125;<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">        System.out.println(e.getMessage());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>自定义异常<ul>
+<li>class 自定义异常类 extends 异常类型<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DrunkException</span> <span class="keyword">extends</span> <span class="title">Exception</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DrunkException</span><span class="params">()</span></span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DrunkException</span><span class="params">(String message)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(message);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>异常链<ul>
+<li>示例<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test1</span><span class="params">()</span> <span class="keyword">throws</span> DrunkException</span>&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> DrunkException(<span class="string">"喝酒不开车！"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test2</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        test1();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (DrunkException e) &#123;</span><br><span class="line">        RuntimeException newExc = <span class="keyword">new</span> RuntimeException(<span class="string">"禁止开车"</span>);</span><br><span class="line">        newExc.initCause(e);</span><br><span class="line">        <span class="comment">// RuntimeException newExc = new RuntimeException(e);</span></span><br><span class="line">        <span class="keyword">throw</span> newExc;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    exception hello = <span class="keyword">new</span> exception();</span><br><span class="line">    <span class="comment">// 异常链</span></span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        test2();</span><br><span class="line">    &#125;<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="常用类"><a href="#常用类" class="headerlink" title="常用类"></a>常用类</h3><ul>
+<li><p>字符串</p>
+<ul>
+<li>字符串的不变性<ul>
+<li><code>String s1 = &quot;imooc&quot;</code>不等于<code>String s2 = new String(&quot;imooc&quot;)</code></li>
+<li>每次new一个字符串会产生一个新的对象，即使内容相同对于==运算是fasle（比较内容用equals）</li>
+</ul>
+</li>
+<li>String类的常用方法<ul>
+<li><code>length()，indexOf(), substring()</code></li>
+<li>字符串索引不能用s[i]，要用<code>s.charAt(i)</code></li>
+</ul>
+</li>
+<li>文件名和邮箱格式验证<ul>
+<li>练习<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">String fileName = <span class="string">"immoc.com.java"</span>;</span><br><span class="line">String email = <span class="string">"louis@imooc.com"</span>;</span><br><span class="line"><span class="keyword">int</span> index = fileName.lastIndexOf(<span class="string">'.'</span>); <span class="comment">// 最后一次出现"."的位置</span></span><br><span class="line">String prefix = fileName.substring(index+<span class="number">1</span>); <span class="comment">// 获取文件后缀名</span></span><br><span class="line"><span class="keyword">int</span> index2 = email.indexOf(<span class="string">'@'</span>);</span><br><span class="line"><span class="keyword">int</span> index3 = email.indexOf(<span class="string">'.'</span>);</span><br><span class="line"><span class="keyword">if</span>(index != -<span class="number">1</span> &amp;&amp; index !=<span class="number">0</span> &amp;&amp; prefix.equals(<span class="string">"java"</span>))&#123;</span><br><span class="line">    <span class="comment">// "."存在，且不能在首位，文件后缀名是java</span></span><br><span class="line">    System.out.println(<span class="string">"文件名正确"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(index2 != -<span class="number">1</span> &amp;&amp; index2 &lt; index3)&#123;</span><br><span class="line">    <span class="comment">// "@"存在，且在"."之前</span></span><br><span class="line">    System.out.println(<span class="string">"邮件格式正确"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>StringBuilder与StringBuffer类<ul>
+<li>为什么：String类具有不可变性，频繁操作字符串时会产生很多额外的临时变量，可以用StringBuilder与StringBuffer类</li>
+<li>区别：StringBuffer是线程安全的，StringBuilder无，故性能较好<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">StringBuilder str1 = <span class="keyword">new</span> StringBuilder(<span class="string">"imooc"</span>);</span><br><span class="line">str1.append(<span class="string">" hello"</span>);</span><br><span class="line">str1.insert(<span class="number">5</span>, <span class="number">1</span>);</span><br><span class="line">System.out.println(str1);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>包装类</p>
+<ul>
+<li>作用：为了让基本数据类型也具备对象的特性</li>
+<li>举例：Integer，Float，Double</li>
+<li>自动装箱和拆箱机制（JDK1.5）<ul>
+<li>装箱（把基本类型转换成包装类）<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Integer x = <span class="keyword">new</span> Integer(<span class="number">5</span>); <span class="comment">// 手动</span></span><br><span class="line">Integer y = <span class="number">5</span>; <span class="comment">// 自动</span></span><br></pre></td></tr></table></figure></li>
+<li>拆箱（包装类 -&gt; 基本类型）<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> m = x.intValue(); <span class="comment">// 手动</span></span><br><span class="line"><span class="keyword">int</span> n = x; <span class="comment">// 自动</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>基本类型与字符串的转换</p>
+<ul>
+<li>基本类型 -&gt; 字符串：<ol>
+<li>包装类的toString()</li>
+<li>String类的valueOf()</li>
+<li>空字符串””+基本类型<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">String str1 = Integer.toString(a);</span><br><span class="line">String str2 = String.valueOf(a);</span><br><span class="line">String str3 = <span class="string">""</span>+a;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li>字符串 -&gt; 基本类型：<ol>
+<li>包装类的parseXXX方法</li>
+<li>包装类的valueOf()<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> b = Integer.parseInt(str);</span><br><span class="line"><span class="keyword">int</span> c = Integer.valueOf(str);</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>Date类</p>
+<ul>
+<li>导入：<code>java.util.Date</code></li>
+<li>格式化输出<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Date d = <span class="keyword">new</span> Date();</span><br><span class="line">SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</span><br><span class="line">String today = sdf.format(d);</span><br></pre></td></tr></table></figure></li>
+<li>文本转时间<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String day = <span class="string">"2014年6月1日 21:05:36"</span>;</span><br><span class="line">SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy年MM月dd日 HH:mm:ss"</span>);</span><br><span class="line">Date d = sdf.parse(day);</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>Calendar类</p>
+<ul>
+<li>示例<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Calendar c = Calendar.getInstance();</span><br><span class="line"><span class="comment">// MONTH, DAY_OF_MONTH, HOUR_OF_DAY, MINUTE, SECOND</span></span><br><span class="line"><span class="keyword">int</span> year = c.get(Calendar.YEAR); </span><br><span class="line">Date d = c.getTime();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>Math类</p>
+<ul>
+<li>取整：<code>round()，floor()，ceil()</code></li>
+<li><code>random()</code>：返回[0,1)之间的随机浮点数<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num = (<span class="keyword">int</span>) Math.random()*<span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="集合框架"><a href="#集合框架" class="headerlink" title="集合框架"></a>集合框架</h3><ul>
+<li>概念：Collection和Map<ul>
+<li>Collection：List (ArrayList)、Queue (LinkedList)、Set (HashSet)</li>
+<li>Map：HashMap</li>
+<li>重要的接口和类：Collection接口、Map接口、Collections工具类、Comparable接口、Comparator接口</li>
+</ul>
+</li>
+<li>List接口方法<ul>
+<li>初始化：<code>List coursesList = new ArrayList()</code></li>
+<li><code>add()</code>：<code>coursesList.add(new Course(&quot;1&quot;,&quot;Java&quot;)</code></li>
+<li><code>get()</code>：<code>Course tmp = (Course) coursesList.get(0)</code></li>
+<li><code>addAll()</code>：<code>coursesList.addAll(Arrays.asList({new Course(&quot;2&quot;,&quot;Python&quot;), new Course(&quot;3&quot;,&quot;C++&quot;}))</code></li>
+<li><code>set()</code>：<code>coursesList.set(0, new Course(&quot;4&quot;,&quot;Algorithm&quot;))</code></li>
+<li><code>remove()</code>：<code>coursesList.remove(coursesList.get(0)) //.remove(0)</code></li>
+</ul>
+</li>
+<li>Set接口方法<ul>
+<li>同List的方法</li>
+<li>初始化：<code>Set&lt;Course&gt; courses = new HashSet&lt;Course&gt;()</code></li>
+<li><code>add()</code>：<code>student.courses.add(new Course(&quot;1&quot;,&quot;Java&quot;))</code></li>
+</ul>
+</li>
+<li>Map接口方法<ul>
+<li>初始化：<code>Map&lt;String, Student&gt; students = new HashMap&lt;String, Student&gt;()</code></li>
+<li><code>put()</code>：<code>students.put(ID, newStu)</code>（同时可以修改）</li>
+<li><code>remove()</code>：<code>students.remove(id)</code></li>
+<li>keySet<ul>
+<li><code>keySet()</code><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Set&lt;String&gt; keySet = students.keySet();</span><br><span class="line">System.out.println(<span class="string">"size: "</span>+students.size());</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(String id: keySet)&#123;</span><br><span class="line">    Student stu = students.get(id);</span><br><span class="line">    <span class="keyword">if</span>(stu != <span class="keyword">null</span>)&#123;</span><br><span class="line">        System.out.println(<span class="string">"Student "</span>+stu.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>entrySet<ul>
+<li><code>getKey()</code> 和<code>getValue()</code> 方法<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Set&lt;Entry&lt;String, Student&gt;&gt; entrySet = students.entrySet();</span><br><span class="line"><span class="keyword">for</span>(Entry&lt;String, Student&gt; entry: entrySet)&#123;</span><br><span class="line">    System.out.println(<span class="string">"key: "</span>+entry.getKey() + <span class="string">", value: "</span>+entry.getValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>集合框架的查询<ul>
+<li><code>contains()</code>：测试List是否存在某课程（但是不同对象就有不同值）<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Course c = (Course) coursesList.get(<span class="number">0</span>);</span><br><span class="line">System.out.println(coursesList.contains(c)); <span class="comment">// true</span></span><br><span class="line">Course c2 = <span class="keyword">new</span> Course(c.id, c.name);</span><br><span class="line">System.out.println(coursesList.contains(c2)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure></li>
+<li>解决方法：重写<code>equals()</code>方法<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>==obj)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (obj==<span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(!(obj <span class="keyword">instanceof</span> Course))</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        Course c = (Course) obj;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.name == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(c.name == <span class="keyword">null</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="keyword">this</span>.name.equals(c.name))</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ```    </span><br><span class="line">    - `contains()`：判断Set中课程是否存在</span><br><span class="line">        - 存在跟List相同的问题，需重写`equals()`和`hashCode()`</span><br><span class="line">        - 但是，有bug！写完还是输出<span class="keyword">false</span></span><br><span class="line">    - `indexOf()`：查询位置</span><br><span class="line">        - `coursesList.indexOf(c3)`</span><br><span class="line">    - `contains()`：判断Map中课程是否存在</span><br><span class="line">        - `students.containsKey(id)`</span><br><span class="line">        - `students.containsValue(name)`</span><br><span class="line">- Comparable 和 Comparator 接口</span><br><span class="line">    - `Collections.sort()`：可对基本类型进行排序</span><br><span class="line">    ```java</span><br><span class="line">    List&lt;Integer&gt; integerList = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">    List&lt;String&gt; stringList = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">    Collections.sort(integerList);</span><br><span class="line">    Collections.sort(stringList);</span><br><span class="line">    <span class="comment">// 问题：不能对Student这样的自定义类排序</span></span><br><span class="line">    Collections.sort(studentList); <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure></li>
+<li>Comparable接口：默认比较规则（<code>compareTo()</code>）<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">implements</span> <span class="title">Comparable</span>&lt;<span class="title">Student</span>&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 重写Student类的compareTo方法</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Student o)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.id.compareTo(o.id);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 调用</span></span><br><span class="line">Collections.sort(studentList);</span><br></pre></td></tr></table></figure></li>
+<li>Comparator接口：临时比较规则（<code>compare()</code>）<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 新建StudentComparator类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StudentComparator</span> <span class="keyword">implements</span> <span class="title">Comparator</span>&lt;<span class="title">Student</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Student o1, Student o2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> o1.name.compareTo(o2.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 调用</span></span><br><span class="line">Collections.sort(studentList, <span class="keyword">new</span> StudentComparator());</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Java%E5%9F%BA%E7%A1%80/" rel="tag"># Java基础</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/06/05/Java/Java%E5%85%A5%E9%97%A8/Java%E5%85%A5%E9%97%A8%E7%AC%AC%E4%BA%8C%E5%AD%A3-imooc/" rel="next" title="Java入门第二季-imooc">
+                  <i class="fa fa-chevron-left"></i> Java入门第二季-imooc
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/08/15/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/Spring/Spring%20Boot-imooc/" rel="prev" title="Spring Boot-imooc">
+                  Spring Boot-imooc <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#异常"><span class="nav-number">1.</span> <span class="nav-text">异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用类"><span class="nav-number">2.</span> <span class="nav-text">常用类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集合框架"><span class="nav-number">3.</span> <span class="nav-text">集合框架</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Louis</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Louis</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">
+      
+    Theme – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.1
+  </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/muse.js?v=7.4.1"></script>
+
+<script src="/js/next-boot.js?v=7.4.1"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
