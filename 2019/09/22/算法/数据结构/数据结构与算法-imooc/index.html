@@ -9,7 +9,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 4.0.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
@@ -56,17 +56,14 @@
 </script>
 
   <meta name="description" content="一、常用数据结构：1. 线性结构（数组、栈、队列、链表）、2. 树结构（二分搜索树、堆）、3. 图结构二、排序查找算法：1. 排序、2. 查找三、算法分析：1. 如何解题、2. 复杂度分析">
+<meta name="keywords" content="Ebbinghaus,数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构与算法-imooc">
-<meta property="og:url" content="https://louisgry.github.io/2019/09/22/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-imooc/index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;louisgry.github.io&#x2F;2019&#x2F;09&#x2F;22&#x2F;%E7%AE%97%E6%B3%95&#x2F;%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84&#x2F;%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-imooc&#x2F;index.html">
 <meta property="og:site_name" content="Louis&#39; Blog">
 <meta property="og:description" content="一、常用数据结构：1. 线性结构（数组、栈、队列、链表）、2. 树结构（二分搜索树、堆）、3. 图结构二、排序查找算法：1. 排序、2. 查找三、算法分析：1. 如何解题、2. 复杂度分析">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2019-09-22T14:26:51.000Z">
-<meta property="article:modified_time" content="2020-03-01T12:08:48.622Z">
-<meta property="article:author" content="Louis">
-<meta property="article:tag" content="Ebbinghaus">
-<meta property="article:tag" content="数据结构">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-03-01T12:08:48.622Z">
 <meta name="twitter:card" content="summary">
   <link rel="canonical" href="https://louisgry.github.io/2019/09/22/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-imooc/">
 
@@ -317,10 +314,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="一、常用数据结构"><a href="#一、常用数据结构" class="headerlink" title="一、常用数据结构"></a>一、常用数据结构</h1><p>常见的三种结构：线性结构（数组、栈、队列、链表、哈希表），树结构（二叉树、堆、线段树、Trie、并查集、AVL、红黑树），图结构</p>
-<h2 id="线性结构"><a href="#线性结构" class="headerlink" title="线性结构"></a>线性结构</h2><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;();</span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/louisgry/Algorithm/tree/master/data-structure/src/linear/ArrayList.java" target="_blank" rel="noopener">code</a></p>
-<ul>
+        <h1 id="一、常用数据结构"><a href="#一、常用数据结构" class="headerlink" title="一、常用数据结构"></a>一、常用数据结构</h1><p>常见的三种结构：线性结构（数组、栈、队列、链表、哈希表），树结构（二叉树、堆、线段树、Trie、并查集、AVL、红黑树），图结构</p><h2 id="线性结构"><a href="#线性结构" class="headerlink" title="线性结构"></a>线性结构</h2><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;();</span><br></pre></td></tr></table></figure><p><a href="https://github.com/louisgry/Algorithm/tree/master/data-structure/src/linear/ArrayList.java" target="_blank" rel="noopener">code</a></p><ul>
 <li>添加：<code>list.add(e)</code>，O(n)<ul>
 <li><code>list.addFirst(e)</code>，O(n)</li>
 <li><code>list.addLast(e)</code>，<strong>O(1)</strong></li>
@@ -339,7 +333,10 @@
 <li>remove时<code>grow(data.length/2)</code>（但size==data.length/4）</li>
 </ul>
 </li>
-</ul>
+</ul><a id="more"></a>
+
+
+
 <h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stack&lt;Character&gt; stack = new Stack&lt;Character&gt;();</span><br></pre></td></tr></table></figure>
 <p><a href="https://github.com/louisgry/Algorithm/tree/master/data-structure/src/linear/Stack.java" target="_blank" rel="noopener">code</a></p>
 <ul>
@@ -627,7 +624,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Louis</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.1
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
   <div class="theme-info">
@@ -657,18 +654,10 @@
   <script src="/lib/anime.min.js?v=3.1.0"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/muse.js?v=7.4.1"></script>
 
-<script src="/js/utils.js?v=7.4.1.js"></script>
-
-<script src="/js/motion.js?v=7.4.1.js"></script>
-
-
-<script src="/js/schemes/muse.js?v=7.4.1.js"></script>
-
-
-
-<script src="/js/next-boot.js?v=7.4.1.js"></script>
-
+<script src="/js/next-boot.js?v=7.4.1"></script>
 
 
 
@@ -681,9 +670,7 @@
 
 
 
-  
-<script src="/js/local-search.js?v=7.4.1.js"></script>
-
+  <script src="/js/local-search.js?v=7.4.1"></script>
 
 
 

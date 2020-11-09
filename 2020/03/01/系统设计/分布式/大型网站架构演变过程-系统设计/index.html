@@ -9,7 +9,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 4.0.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
@@ -55,31 +55,29 @@
   };
 </script>
 
-  <meta name="description" content="单体架构 -&gt; 集群架构 -&gt; 分布式架构">
+  <meta name="description" content="单体架构 -&amp;gt; 集群架构 -&amp;gt; 分布式架构">
+<meta name="keywords" content="架构演进">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大型网站架构演变过程-系统设计">
-<meta property="og:url" content="https://louisgry.github.io/2020/03/01/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%A4%A7%E5%9E%8B%E7%BD%91%E7%AB%99%E6%9E%B6%E6%9E%84%E6%BC%94%E5%8F%98%E8%BF%87%E7%A8%8B-%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;louisgry.github.io&#x2F;2020&#x2F;03&#x2F;01&#x2F;%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&#x2F;%E5%88%86%E5%B8%83%E5%BC%8F&#x2F;%E5%A4%A7%E5%9E%8B%E7%BD%91%E7%AB%99%E6%9E%B6%E6%9E%84%E6%BC%94%E5%8F%98%E8%BF%87%E7%A8%8B-%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&#x2F;index.html">
 <meta property="og:site_name" content="Louis&#39; Blog">
-<meta property="og:description" content="单体架构 -&gt; 集群架构 -&gt; 分布式架构">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://louisgry.github.io/images/architecture/revolution/1.png">
-<meta property="og:image" content="https://louisgry.github.io/images/architecture/revolution/2.png">
-<meta property="og:image" content="https://louisgry.github.io/images/architecture/revolution/3.png">
-<meta property="og:image" content="https://louisgry.github.io/images/architecture/revolution/4.png">
-<meta property="og:image" content="https://louisgry.github.io/images/architecture/revolution/5.png">
-<meta property="og:image" content="https://louisgry.github.io/images/architecture/revolution/6.png">
-<meta property="og:image" content="https://louisgry.github.io/images/architecture/revolution/7.png">
-<meta property="og:image" content="https://louisgry.github.io/images/architecture/revolution/8.png">
-<meta property="og:image" content="https://louisgry.github.io/images/architecture/revolution/9.png">
-<meta property="og:image" content="https://louisgry.github.io/images/architecture/revolution/10.png">
-<meta property="og:image" content="https://louisgry.github.io/images/architecture/revolution/11.png">
-<meta property="og:image" content="https://louisgry.github.io/images/architecture/revolution/0.png">
-<meta property="article:published_time" content="2020-03-01T01:50:45.000Z">
-<meta property="article:modified_time" content="2020-03-01T11:36:00.164Z">
-<meta property="article:author" content="Louis">
-<meta property="article:tag" content="架构演进">
+<meta property="og:description" content="单体架构 -&amp;gt; 集群架构 -&amp;gt; 分布式架构">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;louisgry.github.io&#x2F;images&#x2F;architecture&#x2F;revolution&#x2F;1.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;louisgry.github.io&#x2F;images&#x2F;architecture&#x2F;revolution&#x2F;2.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;louisgry.github.io&#x2F;images&#x2F;architecture&#x2F;revolution&#x2F;3.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;louisgry.github.io&#x2F;images&#x2F;architecture&#x2F;revolution&#x2F;4.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;louisgry.github.io&#x2F;images&#x2F;architecture&#x2F;revolution&#x2F;5.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;louisgry.github.io&#x2F;images&#x2F;architecture&#x2F;revolution&#x2F;6.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;louisgry.github.io&#x2F;images&#x2F;architecture&#x2F;revolution&#x2F;7.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;louisgry.github.io&#x2F;images&#x2F;architecture&#x2F;revolution&#x2F;8.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;louisgry.github.io&#x2F;images&#x2F;architecture&#x2F;revolution&#x2F;9.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;louisgry.github.io&#x2F;images&#x2F;architecture&#x2F;revolution&#x2F;10.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;louisgry.github.io&#x2F;images&#x2F;architecture&#x2F;revolution&#x2F;11.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;louisgry.github.io&#x2F;images&#x2F;architecture&#x2F;revolution&#x2F;0.png">
+<meta property="og:updated_time" content="2020-03-01T11:36:00.164Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://louisgry.github.io/images/architecture/revolution/1.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;louisgry.github.io&#x2F;images&#x2F;architecture&#x2F;revolution&#x2F;1.png">
   <link rel="canonical" href="https://louisgry.github.io/2020/03/01/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%A4%A7%E5%9E%8B%E7%BD%91%E7%AB%99%E6%9E%B6%E6%9E%84%E6%BC%94%E5%8F%98%E8%BF%87%E7%A8%8B-%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/">
 
 
@@ -330,32 +328,32 @@
 
       
         <h2 id="早期-amp-单体架构"><a href="#早期-amp-单体架构" class="headerlink" title="早期 &amp; 单体架构"></a>早期 &amp; 单体架构</h2><ul>
-<li><p>Web 1.0：简单的静态页面，用户与浏览器几乎没有交互，网页只是单纯的展示功能<br><img src="/images/architecture/revolution/1.png" alt=""></p>
+<li><p>Web 1.0：简单的静态页面，用户与浏览器几乎没有交互，网页只是单纯的展示功能<br><img src="/images/architecture/revolution/1.png" alt></p>
 </li>
-<li><p>Web 2.0：用户与服务器之间开始存在双向交互，并可以持久化到数据库中进行保存<br><img src="/images/architecture/revolution/2.png" alt=""></p>
+<li><p>Web 2.0：用户与服务器之间开始存在双向交互，并可以持久化到数据库中进行保存<br><img src="/images/architecture/revolution/2.png" alt></p>
 </li>
-<li><p>传统MVC模式：一个服务器就包括了数据库，应用，文件服务器<br><img src="/images/architecture/revolution/3.png" alt=""></p>
+<li><p>传统MVC模式：一个服务器就包括了数据库，应用，文件服务器<br><img src="/images/architecture/revolution/3.png" alt></p>
 </li>
-<li><p>服务分离的架构：独立数据服务器、文件服务器<br><img src="/images/architecture/revolution/4.png" alt=""></p>
+<li><p>服务分离的架构：独立数据服务器、文件服务器<br><img src="/images/architecture/revolution/4.png" alt></p>
 </li>
-<li><p>缓存层减少数据库压力：用户访问量的上升造成的最明显的影响是查询速度的下降，是因为数据库的查询压力过大<br><img src="/images/architecture/revolution/5.png" alt=""></p>
+<li><p>缓存层减少数据库压力：用户访问量的上升造成的最明显的影响是查询速度的下降，是因为数据库的查询压力过大<br><img src="/images/architecture/revolution/5.png" alt></p>
 </li>
-</ul>
+</ul><a id="more"></a>
 <h2 id="集群-amp-分布式架构"><a href="#集群-amp-分布式架构" class="headerlink" title="集群 &amp; 分布式架构"></a>集群 &amp; 分布式架构</h2><ul>
-<li><p>集群、负载均衡：单体架构最大的弊端就是当服务挂掉之后，服务无法自己修复，用户是无法访问服务的<br><img src="/images/architecture/revolution/6.png" alt=""></p>
+<li><p>集群、负载均衡：单体架构最大的弊端就是当服务挂掉之后，服务无法自己修复，用户是无法访问服务的<br><img src="/images/architecture/revolution/6.png" alt></p>
 </li>
-<li><p>数据库读写分离：数据库操作中百分之80都是查询操作，剩下的就是写操作，这时候可以使用读写分离的方式来提升架构的性能。主数据库只用来写入，从数据库只用来读取，一定时间内进行主从复制<br><img src="/images/architecture/revolution/7.png" alt=""></p>
+<li><p>数据库读写分离：数据库操作中百分之80都是查询操作，剩下的就是写操作，这时候可以使用读写分离的方式来提升架构的性能。主数据库只用来写入，从数据库只用来读取，一定时间内进行主从复制<br><img src="/images/architecture/revolution/7.png" alt></p>
 </li>
-<li><p>数据库集群、分库分表：重点是分布式主键，需要保证在数据库集群中的每一条数据主键唯一<br><img src="/images/architecture/revolution/8.png" alt=""></p>
+<li><p>数据库集群、分库分表：重点是分布式主键，需要保证在数据库集群中的每一条数据主键唯一<br><img src="/images/architecture/revolution/8.png" alt></p>
 </li>
-<li><p>分布式搜索引擎：把模糊搜索放在数据库上会有很大的压力，这时候就可以用到搜索引擎来处理模糊搜索<br><img src="/images/architecture/revolution/9.png" alt=""></p>
+<li><p>分布式搜索引擎：把模糊搜索放在数据库上会有很大的压力，这时候就可以用到搜索引擎来处理模糊搜索<br><img src="/images/architecture/revolution/9.png" alt></p>
 </li>
-<li><p>拆分服务、微服务：优点就是业务分离，负载降低，同时开发人员或开发团队可以只专注于一个模块的开发，但是模块的拆分给测试和运维带来了挑战，因为代码变得更加复杂，必须考虑分布式事务<br><img src="/images/architecture/revolution/10.png" alt=""></p>
+<li><p>拆分服务、微服务：优点就是业务分离，负载降低，同时开发人员或开发团队可以只专注于一个模块的开发，但是模块的拆分给测试和运维带来了挑战，因为代码变得更加复杂，必须考虑分布式事务<br><img src="/images/architecture/revolution/10.png" alt></p>
 </li>
-<li><p>消息队列与性能调优：JVM调优、Tomcat调优、MySQL调优、Linux性能调优、架构调优<br><img src="/images/architecture/revolution/11.png" alt=""></p>
+<li><p>消息队列与性能调优：JVM调优、Tomcat调优、MySQL调优、Linux性能调优、架构调优<br><img src="/images/architecture/revolution/11.png" alt></p>
 </li>
 </ul>
-<h2 id="总体架构"><a href="#总体架构" class="headerlink" title="总体架构"></a>总体架构</h2><p><img src="/images/architecture/revolution/0.png" alt=""></p>
+<h2 id="总体架构"><a href="#总体架构" class="headerlink" title="总体架构"></a>总体架构</h2><p><img src="/images/architecture/revolution/0.png" alt></p>
 
     </div>
 
@@ -513,7 +511,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Louis</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.1
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
   <div class="theme-info">
@@ -543,18 +541,10 @@
   <script src="/lib/anime.min.js?v=3.1.0"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/muse.js?v=7.4.1"></script>
 
-<script src="/js/utils.js?v=7.4.1.js"></script>
-
-<script src="/js/motion.js?v=7.4.1.js"></script>
-
-
-<script src="/js/schemes/muse.js?v=7.4.1.js"></script>
-
-
-
-<script src="/js/next-boot.js?v=7.4.1.js"></script>
-
+<script src="/js/next-boot.js?v=7.4.1"></script>
 
 
 
@@ -567,9 +557,7 @@
 
 
 
-  
-<script src="/js/local-search.js?v=7.4.1.js"></script>
-
+  <script src="/js/local-search.js?v=7.4.1"></script>
 
 
 

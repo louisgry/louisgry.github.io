@@ -9,7 +9,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 4.0.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
@@ -56,20 +56,17 @@
 </script>
 
   <meta name="description" content="Redis入门（NoSQL、Redis、Jedis、Redis数据结构、Redis特性、持久化）、Redis进阶（从海量数据中查询某一固定前缀的key、分布式锁、异步队列、持久化原理、主从同步、集群）">
+<meta name="keywords" content="Ebbinghaus,Redis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis-入门与进阶-imooc">
-<meta property="og:url" content="https://louisgry.github.io/2019/10/20/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-%E5%85%A5%E9%97%A8%E4%B8%8E%E8%BF%9B%E9%98%B6-imooc/index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;louisgry.github.io&#x2F;2019&#x2F;10&#x2F;20&#x2F;%E6%95%B0%E6%8D%AE%E5%BA%93&#x2F;redis&#x2F;Redis-%E5%85%A5%E9%97%A8%E4%B8%8E%E8%BF%9B%E9%98%B6-imooc&#x2F;index.html">
 <meta property="og:site_name" content="Louis&#39; Blog">
 <meta property="og:description" content="Redis入门（NoSQL、Redis、Jedis、Redis数据结构、Redis特性、持久化）、Redis进阶（从海量数据中查询某一固定前缀的key、分布式锁、异步队列、持久化原理、主从同步、集群）">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://louisgry.github.io/images/basic/redis/1.jpg">
-<meta property="article:published_time" content="2019-10-20T12:47:07.000Z">
-<meta property="article:modified_time" content="2020-02-02T14:06:26.112Z">
-<meta property="article:author" content="Louis">
-<meta property="article:tag" content="Ebbinghaus">
-<meta property="article:tag" content="Redis">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;louisgry.github.io&#x2F;images&#x2F;basic&#x2F;redis&#x2F;1.jpg">
+<meta property="og:updated_time" content="2020-02-02T14:06:26.112Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://louisgry.github.io/images/basic/redis/1.jpg">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;louisgry.github.io&#x2F;images&#x2F;basic&#x2F;redis&#x2F;1.jpg">
   <link rel="canonical" href="https://louisgry.github.io/2019/10/20/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-%E5%85%A5%E9%97%A8%E4%B8%8E%E8%BF%9B%E9%98%B6-imooc/">
 
 
@@ -363,7 +360,7 @@
 <li>Spring Boot下使用Redis：</li>
 <li>引入依赖<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></li>
 <li>单实例测试（服务器上需要打开6379端口：<code>vim /etc/sysconfig/iptables</code>）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@Autowired</span><br><span class="line">private StringRedisTemplate stringRedisTemplate;</span><br><span class="line"></span><br><span class="line">@Test</span><br><span class="line">public void redisTest()&#123;</span><br><span class="line">    // 保存字符串</span><br><span class="line">    stringRedisTemplate.opsForValue().set(&quot;aaa&quot;, &quot;111&quot;);</span><br><span class="line">    Assert.assertEquals(&quot;111&quot;, stringRedisTemplate.opsForValue().get(&quot;aaa&quot;));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>Redis存储对象：需要实现RedisSerializer<T>接口来对传入对象进行序列化和反序列化</li>
+<li>Redis存储对象：需要实现RedisSerializer<t>接口来对传入对象进行序列化和反序列化</t></li>
 <li>连接池方式</li>
 </ul>
 </li>
@@ -529,12 +526,12 @@
 </li>
 </ul>
 </li>
-</ul>
+</ul><a id="more"></a>
 <h3 id="《Redis进阶》"><a href="#《Redis进阶》" class="headerlink" title="《Redis进阶》"></a>《Redis进阶》</h3><ul>
 <li>4-1：Redis简介<ul>
 <li>主流应用架构<ul>
 <li>穿透：缓存层查询不到数据，穿透到存储层查询</li>
-<li>熔断：当存储层宕机时，请求只访问缓存层<br><img src="/images/basic/redis/1.jpg" alt=""></li>
+<li>熔断：当存储层宕机时，请求只访问缓存层<br><img src="/images/basic/redis/1.jpg" alt></li>
 </ul>
 </li>
 <li>缓存中间件：Memcache、Redis<ul>
@@ -930,7 +927,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Louis</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.1
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
   <div class="theme-info">
@@ -960,18 +957,10 @@
   <script src="/lib/anime.min.js?v=3.1.0"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/muse.js?v=7.4.1"></script>
 
-<script src="/js/utils.js?v=7.4.1.js"></script>
-
-<script src="/js/motion.js?v=7.4.1.js"></script>
-
-
-<script src="/js/schemes/muse.js?v=7.4.1.js"></script>
-
-
-
-<script src="/js/next-boot.js?v=7.4.1.js"></script>
-
+<script src="/js/next-boot.js?v=7.4.1"></script>
 
 
 
@@ -984,9 +973,7 @@
 
 
 
-  
-<script src="/js/local-search.js?v=7.4.1.js"></script>
-
+  <script src="/js/local-search.js?v=7.4.1"></script>
 
 
 
