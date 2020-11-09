@@ -23,6 +23,7 @@ description:
 [14：Pythonic与Python杂记](#14：Pythonic与Python杂记)
 
 
+<!-- more -->
 ### 1：Python入门导学
 效率
 - 1.1：导学
