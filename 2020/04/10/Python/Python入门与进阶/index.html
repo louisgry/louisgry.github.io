@@ -327,7 +327,7 @@
 <li>最基础的Python语法编写一个爬虫（了解爬虫原理）</li>
 <li>Life is short, I use Python（简洁）</li>
 <li>一生只能选一种语言，我会选Python</li>
-<li>Pythonic：例如交换变量<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x, y &#x3D; y, x</span><br></pre></td></tr></table></figure></li>
+<li>Pythonic：例如交换变量<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x, y = y, x</span><br></pre></td></tr></table></figure></li>
 <li>Python能做什么：AI、大数据、测试、Web</li>
 <li>Python之禅：<code>import this</code></li>
 </ul>
@@ -391,7 +391,7 @@
 <li>注意：Python里没有单精度、双精度的区分，Python的float就是双精度的</li>
 </ul>
 </li>
-<li>整数除整数，特例情况<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">type(2&#x2F;2)  # &#x3D;&#x3D;&gt; &lt;class &#39;float&#39;&gt;</span><br><span class="line">type(2&#x2F;&#x2F;2) # &#x3D;&#x3D;&gt; &lt;class &#39;int&#39;&gt;</span><br><span class="line">1&#x2F;&#x2F;2 # &#x3D;&#x3D;&gt; 0</span><br></pre></td></tr></table></figure></li>
+<li>整数除整数，特例情况<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">type(2/2)  # ==&gt; &lt;class &apos;float&apos;&gt;</span><br><span class="line">type(2//2) # ==&gt; &lt;class &apos;int&apos;&gt;</span><br><span class="line">1//2 # ==&gt; 0</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li>3-3：进制<ul>
@@ -401,7 +401,7 @@
 <li>3-4：各进制的表示与转换<ul>
 <li>二进制：在前面加<code>0b</code>（默认输出十进制）</li>
 <li>八进制：在前面加<code>0o</code></li>
-<li>十六进制：在前面加<code>0x</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0b10 # &#x3D;&#x3D;&gt; 2</span><br><span class="line">10 # &#x3D;&#x3D;&gt; 10</span><br><span class="line">0o10 # &#x3D;&#x3D;&gt; 8</span><br><span class="line">0x10 # &#x3D;&#x3D;&gt; 16</span><br></pre></td></tr></table></figure></li>
+<li>十六进制：在前面加<code>0x</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0b10 # ==&gt; 2</span><br><span class="line">10 # ==&gt; 10</span><br><span class="line">0o10 # ==&gt; 8</span><br><span class="line">0x10 # ==&gt; 16</span><br></pre></td></tr></table></figure></li>
 <li><code>bin()</code>：各进制转二进制</li>
 <li><code>int()</code>：各进制转十进制</li>
 <li><code>oct()</code>：各进制转八进制</li>
@@ -414,7 +414,7 @@
 </ul>
 </li>
 <li>bool：<code>True、False均大写</code></li>
-<li>False：数值为0、None和空时为False<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int(True) # &#x3D;&#x3D;&gt; 1</span><br><span class="line">int(False) # &#x3D;&#x3D;&gt; 0</span><br><span class="line">bool(-1.1) # &#x3D;&#x3D;&gt; True</span><br><span class="line">bool(0) # &#x3D;&#x3D;&gt; False</span><br><span class="line">bool(None) # &#x3D;&#x3D;&gt; False</span><br><span class="line">bool(&#39;&#39;) # &#x3D;&#x3D;&gt; False</span><br></pre></td></tr></table></figure></li>
+<li>False：数值为0、None和空时为False<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int(True) # ==&gt; 1</span><br><span class="line">int(False) # ==&gt; 0</span><br><span class="line">bool(-1.1) # ==&gt; True</span><br><span class="line">bool(0) # ==&gt; False</span><br><span class="line">bool(None) # ==&gt; False</span><br><span class="line">bool(&apos;&apos;) # ==&gt; False</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li>3-6：字符串<ul>
@@ -422,7 +422,7 @@
 </ul>
 </li>
 <li>3-7：多行字符串<ul>
-<li>三引号<code>&#39;&#39;&#39;</code>（包括是三个单引号、双引号）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#39;&#39;&#39; </span><br><span class="line">Hello world</span><br><span class="line">hello world</span><br><span class="line">&#39;&#39;&#39;</span><br></pre></td></tr></table></figure></li>
+<li>三引号<code>&#39;&#39;&#39;</code>（包括是三个单引号、双引号）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&apos;&apos;&apos; </span><br><span class="line">Hello world</span><br><span class="line">hello world</span><br><span class="line">&apos;&apos;&apos;</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li>3-8：转义字符<ul>
@@ -436,8 +436,8 @@
 </li>
 <li>3-10~12：字符串运算<ul>
 <li><code>+</code>：合并字符串、<code>*</code>：重复字符串</li>
-<li>索引和切片：截取字符串（不包括最后一个，左闭右开）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(&#39;helloworld&#39;*3)&#96; # &#x3D;&#x3D;&gt; &#39;helloworldhelloworldhelloworld&#39;</span><br><span class="line">&quot;helloworld&quot;[-1] # &#x3D;&#x3D;&gt; &#39;d&#39;</span><br><span class="line">&quot;helloworld&quot;[0:5] # &#x3D;&#x3D;&gt; &#39;hello&#39;</span><br></pre></td></tr></table></figure></li>
-<li>从头或从尾截取（:所在位置）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;python c c++ c# java javascript python&quot;[:6] # &#x3D;&#x3D;&gt; &#39;python&#39;</span><br><span class="line">&quot;python c c++ c# java javascript python&quot;[-6:] # &#x3D;&#x3D;&gt; &#39;python&#39;</span><br></pre></td></tr></table></figure>
+<li>索引和切片：截取字符串（不包括最后一个，左闭右开）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(&apos;helloworld&apos;*3)` # ==&gt; &apos;helloworldhelloworldhelloworld&apos;</span><br><span class="line">&quot;helloworld&quot;[-1] # ==&gt; &apos;d&apos;</span><br><span class="line">&quot;helloworld&quot;[0:5] # ==&gt; &apos;hello&apos;</span><br></pre></td></tr></table></figure></li>
+<li>从头或从尾截取（:所在位置）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;python c c++ c# java javascript python&quot;[:6] # ==&gt; &apos;python&apos;</span><br><span class="line">&quot;python c c++ c# java javascript python&quot;[-6:] # ==&gt; &apos;python&apos;</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
@@ -451,35 +451,35 @@
 <li>4-2：列表的基本操作<ul>
 <li>加法（没有减法）：合并list</li>
 <li>乘法（不是乘列表）：重复元素</li>
-<li>索引和切片<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[&#39;hello&#39;] + [&#39;world&#39;] # &#x3D;&#x3D;&gt; [&#39;hello&#39;, &#39;world&#39;]</span><br><span class="line">[1] + [2] # &#x3D;&#x3D;&gt; [1,2]</span><br><span class="line">[1,2,3]*3 # &#x3D;&#x3D;&gt; [1,2,3,1,2,3,1,2,3]</span><br><span class="line">[&#39;hello&#39;, &#39;world&#39;][0] # &#x3D;&#x3D;&gt; &#39;hello&#39;</span><br></pre></td></tr></table></figure></li>
+<li>索引和切片<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[&apos;hello&apos;] + [&apos;world&apos;] # ==&gt; [&apos;hello&apos;, &apos;world&apos;]</span><br><span class="line">[1] + [2] # ==&gt; [1,2]</span><br><span class="line">[1,2,3]*3 # ==&gt; [1,2,3,1,2,3,1,2,3]</span><br><span class="line">[&apos;hello&apos;, &apos;world&apos;][0] # ==&gt; &apos;hello&apos;</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li>4-3：元组（tuple）<ul>
-<li>元组内部也可以是多类型，与列表的区别：不可更改<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(1,2,True,&#39;a&#39;)</span><br></pre></td></tr></table></figure></li>
+<li>元组内部也可以是多类型，与列表的区别：不可更改<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(1,2,True,&apos;a&apos;)</span><br></pre></td></tr></table></figure></li>
 <li>元组的操作：加法、乘法、索引和切片</li>
-<li>单个元组表示：要用<code>(1,)</code>，<code>()</code>表示括号运算(1)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">type((1)) # &#x3D;&#x3D;&gt;  &lt;class &#39;int&#39;&gt;</span><br><span class="line">type((&#39;1&#39;)) # &#x3D;&#x3D;&gt;  &lt;class &#39;str&#39;&gt;</span><br><span class="line">type((1,)) # &#x3D;&#x3D;&gt;  &lt;class &#39;tuple&#39;&gt;</span><br><span class="line">type([1,]) # &#x3D;&#x3D;&gt; &lt;class &#39;list&#39;&gt;</span><br></pre></td></tr></table></figure></li>
+<li>单个元组表示：要用<code>(1,)</code>，<code>()</code>表示括号运算(1)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">type((1)) # ==&gt;  &lt;class &apos;int&apos;&gt;</span><br><span class="line">type((&apos;1&apos;)) # ==&gt;  &lt;class &apos;str&apos;&gt;</span><br><span class="line">type((1,)) # ==&gt;  &lt;class &apos;tuple&apos;&gt;</span><br><span class="line">type([1,]) # ==&gt; &lt;class &apos;list&apos;&gt;</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li>4-4：序列总结<ul>
 <li>序列：str，list，tuple（序列里面的元素都有序号）</li>
 <li>序列共有操作：加法、乘法、索引、切片</li>
-<li>判断元素是否在序列中<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3 in [1,2,3,4,5] # &#x3D;&#x3D;&gt; True</span><br><span class="line">3 not in [1,2,3,4,5] # &#x3D;&#x3D;&gt; False</span><br></pre></td></tr></table></figure></li>
-<li>长度、最值<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">len(&#39;hello world&#39;) # &#x3D;&#x3D;&gt; 11</span><br><span class="line">max([1,2,3,4,5]) # &#x3D;&#x3D;&gt; 5</span><br><span class="line">min(&#39;hello world&#39;) # &#x3D;&#x3D;&gt; 输出空格</span><br><span class="line">max(&#39;hello world&#39;) # &#x3D;&#x3D;&gt; w</span><br></pre></td></tr></table></figure></li>
-<li>获取ascii码（ord）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ord(w) # &#x3D;&#x3D;&gt; 119</span><br></pre></td></tr></table></figure></li>
+<li>判断元素是否在序列中<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3 in [1,2,3,4,5] # ==&gt; True</span><br><span class="line">3 not in [1,2,3,4,5] # ==&gt; False</span><br></pre></td></tr></table></figure></li>
+<li>长度、最值<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">len(&apos;hello world&apos;) # ==&gt; 11</span><br><span class="line">max([1,2,3,4,5]) # ==&gt; 5</span><br><span class="line">min(&apos;hello world&apos;) # ==&gt; 输出空格</span><br><span class="line">max(&apos;hello world&apos;) # ==&gt; w</span><br></pre></td></tr></table></figure></li>
+<li>获取ascii码（ord）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ord(w) # ==&gt; 119</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li>4-5：set集合<ul>
 <li>set最大的特点：无序</li>
-<li>第二个特点：不重复<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type(&#123;1,2,3&#125;) # 定义集合 &#123; &#125;</span><br><span class="line">&#123;1,1,2,2,3,3&#125; # &#x3D;&#x3D;&gt; &#123;1,2,3&#125;</span><br></pre></td></tr></table></figure></li>
+<li>第二个特点：不重复<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type(&#123;1,2,3&#125;) # 定义集合 &#123; &#125;</span><br><span class="line">&#123;1,1,2,2,3,3&#125; # ==&gt; &#123;1,2,3&#125;</span><br></pre></td></tr></table></figure></li>
 <li>set获取不了元素、无法进行切片，无加法乘法</li>
 <li>其他操作：长度len，最值，是否在集合中in</li>
-<li>特殊操作：-（求差集），&amp;（求交集），|（求并集）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;1,2,3,4,5&#125; - &#123;4,5&#125; # &#x3D;&#x3D;&gt; &#123;1,2,3&#125;</span><br><span class="line">&#123;1,2,3,4,5&#125; &amp; &#123;4,5,6,7&#125; # &#x3D;&#x3D;&gt; &#123;4,5&#125;</span><br><span class="line">&#123;1,2,3,4,5&#125; | &#123;3,4,5,6&#125; # &#x3D;&#x3D;&gt; &#123;1,2,3,4,5,6&#125;</span><br></pre></td></tr></table></figure></li>
-<li>空集合<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type(&#123;&#125;) # &#x3D;&#x3D;&gt; class &#39;dict&#39;</span><br><span class="line">type(set()) # &#x3D;&#x3D;&gt; class &#39;set&#39;</span><br></pre></td></tr></table></figure></li>
+<li>特殊操作：-（求差集），&amp;（求交集），|（求并集）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;1,2,3,4,5&#125; - &#123;4,5&#125; # ==&gt; &#123;1,2,3&#125;</span><br><span class="line">&#123;1,2,3,4,5&#125; &amp; &#123;4,5,6,7&#125; # ==&gt; &#123;4,5&#125;</span><br><span class="line">&#123;1,2,3,4,5&#125; | &#123;3,4,5,6&#125; # ==&gt; &#123;1,2,3,4,5,6&#125;</span><br></pre></td></tr></table></figure></li>
+<li>空集合<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type(&#123;&#125;) # ==&gt; class &apos;dict&apos;</span><br><span class="line">type(set()) # ==&gt; class &apos;set&apos;</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li>4-5：dict字典<ul>
-<li>字典：key（不重复），value（可重复）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#39;Q&#39;:1, &#39;W&#39;: 2&#125;</span><br><span class="line">&#123;&#39;Q&#39;:1, &#39;W&#39;: 2&#125;[&#39;Q&#39;]</span><br></pre></td></tr></table></figure></li>
-<li>key不重复（不可变）：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;1: &#39;hello&#39;, &#39;1&#39;:&#39;world&#39;&#125; # &#x3D;&#x3D;&gt; 1、&#39;1&#39; key不同</span><br></pre></td></tr></table></figure></li>
+<li>字典：key（不重复），value（可重复）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;&apos;Q&apos;:1, &apos;W&apos;: 2&#125;</span><br><span class="line">&#123;&apos;Q&apos;:1, &apos;W&apos;: 2&#125;[&apos;Q&apos;]</span><br></pre></td></tr></table></figure></li>
+<li>key不重复（不可变）：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;1: &apos;hello&apos;, &apos;1&apos;:&apos;world&apos;&#125; # ==&gt; 1、&apos;1&apos; key不同</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li>4-6：总结基本数据类型<ul>
@@ -510,15 +510,15 @@
 <li>私有变量：双下划线开头</li>
 </ul>
 </li>
-<li>5-3：值类型与引用类型  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">type &#x3D; 1</span><br><span class="line">type(1) # &#x3D;&#x3D;&gt; &#39;int&#39; object is not callable （不可调用的）</span><br><span class="line">del type # 释放变量内存</span><br></pre></td></tr></table></figure>
+<li>5-3：值类型与引用类型  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">type = 1</span><br><span class="line">type(1) # ==&gt; &apos;int&apos; object is not callable （不可调用的）</span><br><span class="line">del type # 释放变量内存</span><br></pre></td></tr></table></figure>
 <ul>
-<li>值类型（不可改变int，str，tuple）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a &#x3D; 1</span><br><span class="line">b &#x3D; a</span><br><span class="line">a &#x3D; 3</span><br><span class="line">print(b)&#96; # &#x3D;&#x3D;&gt; 1</span><br></pre></td></tr></table></figure></li>
-<li>引用类型（可变list，set，dict）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a &#x3D; [1,2,3]</span><br><span class="line">b &#x3D; a</span><br><span class="line">a[0] &#x3D; &#39;1&#39;</span><br><span class="line">print(b)&#96; # &#x3D;&#x3D;&gt; [&#39;1&#39;,2,3]</span><br></pre></td></tr></table></figure></li>
-<li>思考解释：str是不可变，那字符串相加不是改变了？<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">b &#x3D; &#39;hello&#39;</span><br><span class="line">id(b)</span><br><span class="line">b &#x3D; b + &#39;python&#39;</span><br><span class="line">id(b) # &#x3D;&#x3D;&gt; id改变了，说明引入了新的字符串来相加</span><br></pre></td></tr></table></figure></li>
+<li>值类型（不可改变int，str，tuple）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = 1</span><br><span class="line">b = a</span><br><span class="line">a = 3</span><br><span class="line">print(b)` # ==&gt; 1</span><br></pre></td></tr></table></figure></li>
+<li>引用类型（可变list，set，dict）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = [1,2,3]</span><br><span class="line">b = a</span><br><span class="line">a[0] = &apos;1&apos;</span><br><span class="line">print(b)` # ==&gt; [&apos;1&apos;,2,3]</span><br></pre></td></tr></table></figure></li>
+<li>思考解释：str是不可变，那字符串相加不是改变了？<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">b = &apos;hello&apos;</span><br><span class="line">id(b)</span><br><span class="line">b = b + &apos;python&apos;</span><br><span class="line">id(b) # ==&gt; id改变了，说明引入了新的字符串来相加</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li>5-4：列表的可变与元组的不可变<ul>
-<li>可改变的元组<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a &#x3D; (1,2,[3,4])</span><br><span class="line">a[2]&#x3D;5 # &#x3D;&#x3D;&gt; TypeError</span><br><span class="line">a[2][0] &#x3D; 5 # &#x3D;&#x3D;&gt; (1,2,[5,4])</span><br></pre></td></tr></table></figure></li>
+<li>可改变的元组<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = (1,2,[3,4])</span><br><span class="line">a[2]=5 # ==&gt; TypeError</span><br><span class="line">a[2][0] = 5 # ==&gt; (1,2,[5,4])</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li>5-6：赋值运算符<ul>
@@ -526,27 +526,27 @@
 </ul>
 </li>
 <li>5-8：不只是数字才能做比较运算<ul>
-<li>思考题<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">b&#x3D;1</span><br><span class="line">b+&#x3D;b&gt;&#x3D;1 # &#x3D;&#x3D;&gt;2 (1+True&#x3D;2)</span><br></pre></td></tr></table></figure></li>
+<li>思考题<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">b=1</span><br><span class="line">b+=b&gt;=1 # ==&gt;2 (1+True=2)</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li>5-9：逻辑运算符<ul>
-<li>当作bool的非bool类型运算（考虑短路原则）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#39;a&#39; and &#39;b&#39;;  &#39;a&#39; or &#39;b&#39; # &#x3D;&#x3D;&gt; &#39;b&#39;, &#39;a&#39;</span><br><span class="line">[] and [1];  [1] and [] # &#x3D;&#x3D;&gt; [1],[1]</span><br><span class="line">0 or 1;  1 or 0; 1 or 2 # &#x3D;&#x3D;&gt; 1,1,1</span><br></pre></td></tr></table></figure></li>
+<li>当作bool的非bool类型运算（考虑短路原则）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&apos;a&apos; and &apos;b&apos;;  &apos;a&apos; or &apos;b&apos; # ==&gt; &apos;b&apos;, &apos;a&apos;</span><br><span class="line">[] and [1];  [1] and [] # ==&gt; [1],[1]</span><br><span class="line">0 or 1;  1 or 0; 1 or 2 # ==&gt; 1,1,1</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li>5-10：成员运算符<ul>
 <li>in和not in</li>
-<li>字典dict：只针对key<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 in &#123;&#39;a&#39;:1&#125; # &#x3D;&#x3D;&gt; False, </span><br><span class="line">&#39;a&#39; in &#123;&#39;a&#39;:1&#125; # &#x3D;&#x3D;&gt; True</span><br></pre></td></tr></table></figure></li>
+<li>字典dict：只针对key<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 in &#123;&apos;a&apos;:1&#125; # ==&gt; False, </span><br><span class="line">&apos;a&apos; in &#123;&apos;a&apos;:1&#125; # ==&gt; True</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li>5-11：身份运算符<ul>
-<li>is<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a&#x3D;1, b&#x3D;2, a is b # &#x3D;&#x3D;&gt; False</span><br></pre></td></tr></table></figure></li>
-<li>is与==的区别：is判断id<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a&#x3D;1</span><br><span class="line">b&#x3D;1.0</span><br><span class="line">a&#x3D;&#x3D;b # &#x3D;&#x3D;&gt; True</span><br><span class="line">a is b # &#x3D;&#x3D;&gt; False( id 不相等）</span><br></pre></td></tr></table></figure></li>
+<li>is<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a=1, b=2, a is b # ==&gt; False</span><br></pre></td></tr></table></figure></li>
+<li>is与==的区别：is判断id<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a=1</span><br><span class="line">b=1.0</span><br><span class="line">a==b # ==&gt; True</span><br><span class="line">a is b # ==&gt; False( id 不相等）</span><br></pre></td></tr></table></figure></li>
 <li>is not</li>
 </ul>
 </li>
 <li>5-12：如何判断变量的值、身份与类型<ul>
 <li>对象的三大特征：</li>
-<li>值 ==，身份 is，类型 type（isinstance更好：可以判断变量子类的类型）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">isinstance(&#39;hello&#39;, str) # &#x3D;&#x3D;&gt; True</span><br><span class="line">isinstance(&#39;hello&#39;, (int,float,str)) # &#x3D;&#x3D;&gt; 是否是int，float，str中的一种类型</span><br></pre></td></tr></table></figure></li>
+<li>值 ==，身份 is，类型 type（isinstance更好：可以判断变量子类的类型）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">isinstance(&apos;hello&apos;, str) # ==&gt; True</span><br><span class="line">isinstance(&apos;hello&apos;, (int,float,str)) # ==&gt; 是否是int，float，str中的一种类型</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li>5-13：位运算符（把数字当作二进制数进行运算）<ul>
@@ -585,7 +585,7 @@
 </ul>
 </li>
 <li>多行注释<code>&#39;&#39;&#39;</code></li>
-<li>条件判断：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">user_password &#x3D; input()</span><br><span class="line">if user_password &#x3D;&#x3D; &#39;123456&#39;:</span><br><span class="line">    print(&#39;Login successfully!&#39;)</span><br></pre></td></tr></table></figure></li>
+<li>条件判断：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">user_password = input()</span><br><span class="line">if user_password == &apos;123456&apos;:</span><br><span class="line">    print(&apos;Login successfully!&apos;)</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li>6-8：常量与Pylint规范<ul>
@@ -616,17 +616,17 @@
 </ul>
 <h3 id="7：包、模块、函数与变量作用域"><a href="#7：包、模块、函数与变量作用域" class="headerlink" title="7：包、模块、函数与变量作用域"></a>7：包、模块、函数与变量作用域</h3><ul>
 <li>7-1：while循环及使用场景<ul>
-<li>while…else<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">while count&lt;10:</span><br><span class="line">    print(count)</span><br><span class="line">else:</span><br><span class="line">    print(&#39;EOF&#39;)</span><br></pre></td></tr></table></figure></li>
+<li>while…else<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">while count&lt;10:</span><br><span class="line">    print(count)</span><br><span class="line">else:</span><br><span class="line">    print(&apos;EOF&apos;)</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li>7-2：for与for-else循环<ul>
 <li>for循环：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for x in x_list:</span><br><span class="line">    print(x)</span><br></pre></td></tr></table></figure></li>
-<li>for-else：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for x in range(5):</span><br><span class="line">    print(x)</span><br><span class="line">else:</span><br><span class="line">    print(&#39;for-else&#39;)</span><br></pre></td></tr></table></figure></li>
+<li>for-else：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for x in range(5):</span><br><span class="line">    print(x)</span><br><span class="line">else:</span><br><span class="line">    print(&apos;for-else&apos;)</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li>7-3：for与range<ul>
-<li>range：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for x in range(0,10,2):</span><br><span class="line">    print(x)  # &#x3D;&#x3D;&gt; 0,2,4,6,8</span><br></pre></td></tr></table></figure></li>
-<li>逆序<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for x in range(10,0,-2): </span><br><span class="line">    print(x)  # &#x3D;&#x3D;&gt; 10,8,6,4,2</span><br></pre></td></tr></table></figure></li>
+<li>range：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for x in range(0,10,2):</span><br><span class="line">    print(x)  # ==&gt; 0,2,4,6,8</span><br></pre></td></tr></table></figure></li>
+<li>逆序<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for x in range(10,0,-2): </span><br><span class="line">    print(x)  # ==&gt; 10,8,6,4,2</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li>7-4：新篇章<ul>
@@ -650,7 +650,7 @@
 <li>from import<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from t.c7 import a</span><br></pre></td></tr></table></figure></li>
 <li>直接导入模块<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from t import c7</span><br><span class="line">print(c7.a)</span><br></pre></td></tr></table></figure></li>
 <li>不推荐：<code>from t import *</code></li>
-<li>如果要<code>import *</code>，可以在类中可定义‘*’的变量<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">__all__ &#x3D; [&#39;a&#39;,&#39;c&#39;]  # b不让导入</span><br><span class="line">a &#x3D; 1</span><br><span class="line">b &#x3D; 2</span><br><span class="line">c &#x3D; 3</span><br></pre></td></tr></table></figure></li>
+<li>如果要<code>import *</code>，可以在类中可定义‘*’的变量<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">__all__ = [&apos;a&apos;,&apos;c&apos;]  # b不让导入</span><br><span class="line">a = 1</span><br><span class="line">b = 2</span><br><span class="line">c = 3</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li>7-9：<code>__init__.py</code> 的用法<ul>
@@ -687,7 +687,7 @@
 </ul>
 </li>
 <li>7-12：入口文件和普通模块内置变量的区别<ul>
-<li>Error（must be str, not NoneType）修改：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(__doc__ or &#39;none doc string&#39;)</span><br></pre></td></tr></table></figure></li>
+<li>Error（must be str, not NoneType）修改：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(__doc__ or &apos;none doc string&apos;)</span><br></pre></td></tr></table></figure></li>
 <li>入口文件的差异：<ul>
 <li><code>print(__name__)</code>是<code>__main__</code></li>
 </ul>
@@ -697,7 +697,7 @@
 </li>
 <li>7-13：<code>__name__</code>的经典应用<ul>
 <li>dir查看某个模块<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line">dir(sys)</span><br></pre></td></tr></table></figure></li>
-<li>既可作模块也可作可执行文件：当import时，不会执行if里的代码<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if __name__ &#x3D;&#x3D; &#39;__main__&#39;: ... # make a script both importable and executable</span><br></pre></td></tr></table></figure></li>
+<li>既可作模块也可作可执行文件：当import时，不会执行if里的代码<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if __name__ == &apos;__main__&apos;: ... # make a script both importable and executable</span><br></pre></td></tr></table></figure></li>
 <li>可执行文件以模块方式运行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m seven.c13  # 直接使用c13会报错</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
@@ -721,7 +721,7 @@
 </ul>
 <h3 id="8：Python函数"><a href="#8：Python函数" class="headerlink" title="8：Python函数"></a>8：Python函数</h3><ul>
 <li>8-1：认识函数<ul>
-<li>round函数<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">round(a, 2) # 四舍五入保留两位小数</span><br><span class="line">round(4.5)  # &#x3D;&#x3D;&gt; 4，五保留</span><br></pre></td></tr></table></figure></li>
+<li>round函数<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">round(a, 2) # 四舍五入保留两位小数</span><br><span class="line">round(4.5)  # ==&gt; 4，五保留</span><br></pre></td></tr></table></figure></li>
 <li>vscode新建另一个命令行：旁边的加号进入python命令行</li>
 <li><code>help(round)</code> # 查看函数信息，Enter翻页</li>
 <li>特点：功能性，隐藏细节（使用时候简单），避免编写重复的代码</li>
@@ -1437,7 +1437,7 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2020/03/01/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%A4%A7%E5%9E%8B%E7%BD%91%E7%AB%99%E6%9E%B6%E6%9E%84%E6%BC%94%E5%8F%98%E8%BF%87%E7%A8%8B-%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" rel="next" title="大型网站架构演变过程-系统设计">
+                <a href="/2020/03/01/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E5%A4%A7%E5%9E%8B%E7%BD%91%E7%AB%99%E6%9E%B6%E6%9E%84%E6%BC%94%E5%8F%98%E8%BF%87%E7%A8%8B-%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" rel="next" title="大型网站架构演变过程-系统设计">
                   <i class="fa fa-chevron-left"></i> 大型网站架构演变过程-系统设计
                 </a>
               
@@ -1511,7 +1511,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1524,7 +1524,7 @@
             <a href="/categories/">
           
         
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">categories</span>
         </a>
       </div>
@@ -1537,7 +1537,7 @@
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">tags</span>
         </a>
       </div>
