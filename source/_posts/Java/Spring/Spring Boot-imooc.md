@@ -1,14 +1,13 @@
 ---
 title: Spring Boot-imooc
 date: 2019-08-15 15:41:34
-categories: 系统设计
+categories: Java
 tags: 
 - Spring
 description: Spring Boot入门、进阶、Spring Boot 2.0
 ---
 
 ## SpringBoot入门
-https://github.com/louisgry/Programming/tree/master/Spring/springboot
 - Ch1：课程引导
     - Spring Boot：编码、配置、部署、监控（作基础架构）
         - 1.化繁为简、简化配置

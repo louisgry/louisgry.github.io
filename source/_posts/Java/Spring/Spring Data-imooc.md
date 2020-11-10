@@ -1,7 +1,7 @@
 ---
 title: Spring Data-imooc
 date: 2019-08-19 15:41:34
-categories: 系统设计
+categories: Java
 tags: 
 - Spring
 description: 使用传统方式访问数据库、Spring Data入门与进阶
@@ -9,7 +9,6 @@ description: 使用传统方式访问数据库、Spring Data入门与进阶
 
 
 ## 轻松愉快之玩转SpringData
-https://github.com/louisgry/Programming/tree/master/Spring/springdata
 - Ch1：课程介绍
     - Spring Data：简化数据库的访问方式
     - 包含多个子项目：Spring Data JPA、MongoDB、Redis、Solr
